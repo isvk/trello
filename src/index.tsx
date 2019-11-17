@@ -1,12 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+import { createStore, applyMiddleware, compose } from "redux";
+import { Provider } from "react-redux";
+import { createBrowserHistory } from "history";
+import { routerMiddleware, ConnectedRouter } from "connected-react-router";
+import createSagaMiddleware from "redux-saga";
+import rootReducer from "./store/rootReducer";
+import rootSaga from "./store/rootSaga";
+import services from "./services";
 import * as serviceWorker from "./serviceWorker";
+import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import "./index.css";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+export const history = createBrowserHistory();
+const sagaMiddleware = createSagaMiddleware();
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+    rootReducer(history),
+    composeEnhancers(applyMiddleware(sagaMiddleware, routerMiddleware(history)))
+);
+sagaMiddleware.run(rootSaga(services));
+
+ReactDOM.render(
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <App />
+        </ConnectedRouter>
+    </Provider>,
+    document.getElementById("root")
+);
 serviceWorker.unregister();
