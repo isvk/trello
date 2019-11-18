@@ -1,5 +1,6 @@
 import { Record } from "immutable";
 import { IList } from "./list";
+import { IApiItem } from "../services/api/apiItem";
 
 export interface IItem {
     id: string;
@@ -16,8 +17,7 @@ const initialItem: IItem = {
 export default class Item extends Record(initialItem) implements IItem {
     public readonly idList: string = "";
 
-    //TODO any = IItemApi
-    public constructor(values: any) {
+    public constructor(values: IApiItem) {
         super(values);
 
         this.idList = values.list_id;
