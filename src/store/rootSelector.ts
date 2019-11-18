@@ -1,4 +1,4 @@
 import { createSelector } from "reselect";
-import { TStore } from "./rootReducer";
+import { IStore } from "./rootReducer";
 
-const propsFirstSelector = (_: TStore, prop: any) => prop;
+const propsFirstSelector = (_: IStore, prop: any) => prop;
