@@ -1,7 +1,7 @@
 import { IHttp } from "./IHttp";
 
-interface IData {
-    memberId?: string | null;
+export interface IData {
+    idMember?: string | null;
     token?: string | null;
     key?: string | null;
     [key: string]: string | number | null | undefined;
@@ -25,7 +25,7 @@ export default class Http implements IHttp {
     };
 
     request = (method: string, url: string, data: IData = {}) => {
-        if (!data.memberId) data.memberId = localStorage.getItem("memberId");
+        if (!data.idMember) data.idMember = localStorage.getItem("idMember");
         if (!data.token) data.token = localStorage.getItem("token");
         if (!data.key) data.key = process.env.REACT_APP_API_KEY;
 

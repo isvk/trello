@@ -1,3 +1,4 @@
+import * as authActions from "src/store/auth/actions";
 import * as listActions from "src/store/lists/actions";
 import * as itemActions from "src/store/items/actions";
 
@@ -7,5 +8,5 @@ export type ActionTypesInfer<T extends { [key: string]: any }> = ReturnType<
 >;
 
 export type allActionsTypes = ActionTypesInfer<
-    typeof listActions | typeof itemActions
+    typeof authActions | typeof listActions | typeof itemActions
 >;

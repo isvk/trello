@@ -1,13 +1,15 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-
 import logo from "./logo.svg";
 import "./App.css";
+import Auth from "./components/Auth/Auth";
+import AuthSuccess from "./components/AuthSuccess/AuthSuccess";
 
 const App: React.FC = () => {
     return (
         <Switch>
             <Route exact path="/">
+                <Auth />
                 <div className="App">
                     <header className="App-header">
                         <img src={logo} className="App-logo" alt="logo" />
@@ -25,6 +27,8 @@ const App: React.FC = () => {
                     </header>
                 </div>
             </Route>
+            <Route exact path="/auth/" />
+            <Route path="/auth/save_token" component={AuthSuccess} />
         </Switch>
     );
 };
