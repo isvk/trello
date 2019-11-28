@@ -12,7 +12,7 @@ const reducer = (
 ) => {
     switch (action.type) {
         case types.ADD_BOARDS:
-            action.arrayBoards.forEach((item: any) => {
+            action.boards.forEach((item: Board) => {
                 state = state.set(item.id, item);
             });
             return state;
