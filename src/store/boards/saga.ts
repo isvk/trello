@@ -3,7 +3,10 @@ import { put, call, takeEvery } from "@redux-saga/core/effects";
 import * as types from "./types";
 import { addBoards } from "./actions";
 import Board from "src/models/board";
+import List from "src/models/list";
 import { IApiBoard } from "src/services/api/apiBoard";
+import { IApiList } from "../../services/api/apiList";
+import { addLists } from "src/store/lists/actions";
 
 function* loadBoardsAsync(services: typeof bottle) {
     try {
@@ -14,6 +17,15 @@ function* loadBoardsAsync(services: typeof bottle) {
 
         yield put(
             addBoards(apiBoards.map((board: IApiBoard) => new Board(board)))
+        );
+
+        yield put(
+            addLists(
+                apiBoards
+                    .map((board: IApiBoard) => board.lists)
+                    .flat()
+                    .map((list: IApiList) => new List(list))
+            )
         );
     } catch (e) {
         console.error(e);

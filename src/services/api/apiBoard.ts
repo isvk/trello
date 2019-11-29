@@ -1,9 +1,10 @@
 import { IHttp } from "../IHttp";
+import { IApiList } from "./apiList";
 
 export interface IApiBoard {
     id: string;
     name: string;
-    lists: { id: string; name: string }[]; //TODO IApiList
+    lists: IApiList[];
 }
 
 export default class ApiBoard {
