@@ -7,6 +7,7 @@ import lists, { TStoreList } from "./lists/reducer";
 import cards, { TStoreCard } from "./cards/reducer";
 
 export interface IStore {
+    router: typeof connectRouter;
     auth: TStoreAuth;
     boards: TStoreBoard;
     lists: TStoreList;
