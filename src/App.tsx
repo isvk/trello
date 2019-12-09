@@ -18,12 +18,7 @@ const App: React.FC = () => {
                         <p>
                             Edit <code>src/App.tsx</code> and save to reload.
                         </p>
-                        <a
-                            className="App-link"
-                            href="https://reactjs.org"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
                             Learn React
                         </a>
                     </header>
@@ -32,11 +27,7 @@ const App: React.FC = () => {
             <Route exact path="/auth" />
             <Route exact path="/auth/save_token" component={AuthSuccess} />
             <Route exact path="/board" component={ListBoardsPageContainer} />
-            <Route
-                exact
-                path="/board/:idBoard"
-                component={BoardPageContainer}
-            />
+            <Route exact path="/board/:idBoard" component={BoardPageContainer} />
         </Switch>
     );
 };

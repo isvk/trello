@@ -15,15 +15,11 @@ const initialItem: IStoreBoardRecord = {
     collection: Map([])
 };
 
-class StoreBoardRecord extends Record(initialItem)
-    implements IStoreBoardRecord {}
+class StoreBoardRecord extends Record(initialItem) implements IStoreBoardRecord {}
 
 export type TStoreBoard = StoreBoardRecord;
 
-const reducer = (
-    state: TStoreBoard = new StoreBoardRecord(),
-    action: ActionTypesInfer<typeof actions>
-) => {
+const reducer = (state: TStoreBoard = new StoreBoardRecord(), action: ActionTypesInfer<typeof actions>) => {
     switch (action.type) {
         case types.ADD_BOARDS:
             action.boards.forEach((item: Board) => {
@@ -37,15 +33,13 @@ const reducer = (
         case types.SET_CARDS_LOADED:
             return state.updateIn(
                 ["collection", action.id],
-                item =>
-                    item && item.set("cardsLoadingState", loadingState.isLoaded)
+                item => item && item.set("cardsLoadingState", loadingState.isLoaded)
             );
 
         case types.LOAD_CARDS_FOR_BOARD_ERROR:
             return state.updateIn(
                 ["collection", action.id],
-                item =>
-                    item && item.set("cardsLoadingState", loadingState.isError)
+                item => item && item.set("cardsLoadingState", loadingState.isError)
             );
 
         default:

@@ -8,10 +8,7 @@ export default function SelectBoard(props: {
 }) {
     return (
         <div className="buttonSelectBoard">
-            <select
-                onChange={e => props.handleRedirectToBoard(e.target.value)}
-                value={props.idBoard}
-            >
+            <select onChange={e => props.handleRedirectToBoard(e.target.value)} value={props.idBoard}>
                 {props.boards.collection.valueSeq().map(board => (
                     <option value={board.id} key={board.id}>
                         {board.name}

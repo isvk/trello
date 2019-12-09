@@ -4,20 +4,11 @@ import * as types from "./types";
 import Card from "src/models/card";
 import { IApiCard } from "src/services/api/apiCard";
 import { addCards, loadCardsForBoard } from "./actions";
-import {
-    setCardsLoaded,
-    loadCardsForBoardError
-} from "src/store/boards/actions";
+import { setCardsLoaded, loadCardsForBoardError } from "src/store/boards/actions";
 
-function* loadCardsForBoardAsync(
-    services: typeof bottle,
-    action: ReturnType<typeof loadCardsForBoard>
-) {
+function* loadCardsForBoardAsync(services: typeof bottle, action: ReturnType<typeof loadCardsForBoard>) {
     try {
-        const cards = yield call(
-            services.container.ApiCard.loadCardsForBoard,
-            action.idBoard
-        );
+        const cards = yield call(services.container.ApiCard.loadCardsForBoard, action.idBoard);
         yield put(addCards(cards.map((card: IApiCard) => new Card(card))));
         yield put(setCardsLoaded(action.idBoard));
     } catch (e) {
@@ -26,9 +17,5 @@ function* loadCardsForBoardAsync(
 }
 
 export default function* cardSaga(services: typeof bottle) {
-    yield takeEvery(
-        types.LOAD_CARDS_FOR_BOARD,
-        loadCardsForBoardAsync,
-        services
-    );
+    yield takeEvery(types.LOAD_CARDS_FOR_BOARD, loadCardsForBoardAsync, services);
 }

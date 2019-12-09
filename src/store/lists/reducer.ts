@@ -6,10 +6,7 @@ import List from "src/models/list";
 
 export type TStoreList = Map<string, List>;
 
-const reducer = (
-    state: TStoreList = Map([]),
-    action: ActionTypesInfer<typeof actions>
-) => {
+const reducer = (state: TStoreList = Map([]), action: ActionTypesInfer<typeof actions>) => {
     switch (action.type) {
         case types.ADD_LISTS:
             action.lists.forEach((item: List) => {

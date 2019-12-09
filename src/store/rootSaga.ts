@@ -6,10 +6,6 @@ import cardSaga from "./cards/saga";
 
 export default (services: Bottle) => {
     return function* rootSaga() {
-        yield all([
-            authSaga(services),
-            boardSaga(services),
-            cardSaga(services)
-        ]);
+        yield all([authSaga(services), boardSaga(services), cardSaga(services)]);
     };
 };

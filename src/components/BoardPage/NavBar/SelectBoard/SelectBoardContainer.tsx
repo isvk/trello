@@ -12,11 +12,5 @@ export default function SelectBoardContainer(props: { idBoard: string }) {
         dispatch(redirectToBoard(idBoard));
     };
 
-    return (
-        <SelectBoard
-            boards={boards}
-            idBoard={props.idBoard}
-            handleRedirectToBoard={handleRedirectToBoard}
-        />
-    );
+    return <SelectBoard boards={boards} idBoard={props.idBoard} handleRedirectToBoard={handleRedirectToBoard} />;
 }

@@ -1,10 +1,7 @@
 import React from "react";
 import { useParams } from "react-router";
 import useCustomSelector from "src/hooks/useCustomSelector";
-import {
-    boardsGetBoardById,
-    boardsGetBoardsLoadingState
-} from "src/store/rootSelector";
+import { boardsGetBoardById, boardsGetBoardsLoadingState } from "src/store/rootSelector";
 import { loadingState } from "src/store/loadingState";
 import LoadBoardsWithListsContainer from "src/components/LoadBoardsWithLists/LoadBoardsWithListsContainer";
 import LoadCardsContainer from "src/components/LoadCards/LoadCardsContainer";

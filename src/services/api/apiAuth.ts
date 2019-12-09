@@ -8,10 +8,8 @@ export default class ApiAuth {
     }
 
     apiGetIdMemberByToken = (token: string) => {
-        return this.http
-            .get("tokens/" + token + "/", { token })
-            .then((response: any) => {
-                return response.idMember;
-            });
+        return this.http.get("tokens/" + token + "/", { token }).then((response: any) => {
+            return response.idMember;
+        });
     };
 }

@@ -14,10 +14,7 @@ const initialState = {
     key: ""
 };
 
-const reducer = (
-    state: TStoreAuth = initialState,
-    action: ActionTypesInfer<typeof actions>
-) => {
+const reducer = (state: TStoreAuth = initialState, action: ActionTypesInfer<typeof actions>) => {
     switch (action.type) {
         case types.LOGIN_BY_TOKEN:
             return { ...state, token: action.token };

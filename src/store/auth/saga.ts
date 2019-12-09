@@ -13,15 +13,9 @@ function* redirectToAuthForGetTokenAsync() {
     }
 }
 
-function* loginByTokenAsync(
-    services: typeof bottle,
-    action: ReturnType<typeof loginByToken>
-) {
+function* loginByTokenAsync(services: typeof bottle, action: ReturnType<typeof loginByToken>) {
     try {
-        const idMember = yield call(
-            services.container.ApiAuth.apiGetIdMemberByToken,
-            action.token
-        );
+        const idMember = yield call(services.container.ApiAuth.apiGetIdMemberByToken, action.token);
 
         localStorage.setItem("token", action.token);
         localStorage.setItem("idMember", idMember);
@@ -34,9 +28,6 @@ function* loginByTokenAsync(
 }
 
 export default function* authSaga(services: typeof bottle) {
-    yield takeEvery(
-        types.REDIRECT_TO_API_FOR_GET_TOKEN,
-        redirectToAuthForGetTokenAsync
-    );
+    yield takeEvery(types.REDIRECT_TO_API_FOR_GET_TOKEN, redirectToAuthForGetTokenAsync);
     yield takeEvery(types.LOGIN_BY_TOKEN, loginByTokenAsync, services);
 }

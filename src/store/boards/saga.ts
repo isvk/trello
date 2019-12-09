@@ -15,11 +15,7 @@ function* loadBoardsAsync(services: typeof bottle) {
             localStorage.getItem("idMember") || ""
         );
 
-        yield put(
-            addBoards(
-                apiBoardsWithLists.map((board: IApiBoard) => new Board(board))
-            )
-        );
+        yield put(addBoards(apiBoardsWithLists.map((board: IApiBoard) => new Board(board))));
 
         yield put(
             addLists(
