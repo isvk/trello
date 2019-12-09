@@ -4,7 +4,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Auth from "src/components/Auth/Auth";
 import AuthSuccess from "src/components/AuthSuccess/AuthSuccess";
-import ListBoardsPage from "src/components/ListBoardsPage/ListBoardsPage";
+import ListBoardsPageContainer from "./components/ListBoardsPage/ListBoardsPageContainer";
 
 const App: React.FC = () => {
     return (
@@ -30,7 +30,7 @@ const App: React.FC = () => {
             </Route>
             <Route exact path="/auth" />
             <Route exact path="/auth/save_token" component={AuthSuccess} />
-            <Route exact path="/board" component={ListBoardsPage} />
+            <Route exact path="/board" component={ListBoardsPageContainer} />
         </Switch>
     );
 };
