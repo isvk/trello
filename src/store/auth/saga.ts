@@ -2,7 +2,7 @@ import bottle from "src/services";
 import { put, call, takeEvery } from "@redux-saga/core/effects";
 import * as types from "./types";
 import { loginByToken, loginByTokenSuccess } from "./actions";
-import { redirectToAuthForGetToken } from "src/store/routers/actions";
+import { redirectToAuthForGetToken } from "src/store/router/actions";
 import { push } from "connected-react-router";
 
 function* redirectToAuthForGetTokenAsync() {
