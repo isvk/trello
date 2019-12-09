@@ -1,7 +1,7 @@
 import { createSelector } from "reselect";
 import { IStore } from "src/store/rootReducer";
 import { getIdMember, getToken, getKey } from "src/store/auth/selectors";
-import { getBoards } from "src/store/boards/selectors";
+import { getBoards, getBoardsLoadingState } from "src/store/boards/selectors";
 
 const propsFirstSelector = (_: IStore, prop: any) => prop;
 
@@ -11,6 +11,10 @@ export const authGetToken = createSelector(authState, getToken);
 export const authGetKey = createSelector(authState, getKey);
 
 export const boardState = (state: IStore) => state.boards;
+export const boardsGetBoardsLoadingState = createSelector(
+    boardState,
+    getBoardsLoadingState
+);
 export const boardsGetBoards = createSelector(boardState, getBoards);
 export const boardsGetBoardById = createSelector(
     boardsGetBoards,
