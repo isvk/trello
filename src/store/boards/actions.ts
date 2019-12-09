@@ -16,3 +16,15 @@ export const addBoards = (boards: Board[]) =>
         type: types.ADD_BOARDS,
         boards
     } as const);
+
+export const setCardsLoaded = (id: string) =>
+    ({
+        type: types.SET_CARDS_LOADED,
+        id
+    } as const);
+
+export const loadCardsForBoardError = (id: string) =>
+    ({
+        type: types.LOAD_CARDS_FOR_BOARD_ERROR,
+        id
+    } as const);

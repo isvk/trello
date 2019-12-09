@@ -34,6 +34,20 @@ const reducer = (
         case types.LOAD_BOARDS_ERROR:
             return state.set("boardsLoadingState", loadingState.isError);
 
+        case types.SET_CARDS_LOADED:
+            return state.updateIn(
+                ["collection", action.id],
+                item =>
+                    item && item.set("cardsLoadingState", loadingState.isLoaded)
+            );
+
+        case types.LOAD_CARDS_FOR_BOARD_ERROR:
+            return state.updateIn(
+                ["collection", action.id],
+                item =>
+                    item && item.set("cardsLoadingState", loadingState.isError)
+            );
+
         default:
             return state;
     }
