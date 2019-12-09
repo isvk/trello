@@ -1,21 +1,38 @@
-import { Map } from "immutable";
+import { Map, Record } from "immutable";
 import { ActionTypesInfer } from "src/store/actionTypes";
 import * as types from "./types";
 import * as actions from "./actions";
 import Board from "src/models/board";
+import { loadingState } from "src/store/loadingState";
 
-export type TStoreBoard = Map<string, Board>;
+export interface IStoreBoardRecord {
+    boardsLoadingState: loadingState;
+    collection: Map<string, Board>;
+}
+
+const initialItem: IStoreBoardRecord = {
+    boardsLoadingState: loadingState.isNotLoaded,
+    collection: Map([])
+};
+
+class StoreBoardRecord extends Record(initialItem)
+    implements IStoreBoardRecord {}
+
+export type TStoreBoard = StoreBoardRecord;
 
 const reducer = (
-    state: TStoreBoard = Map([]),
+    state: TStoreBoard = new StoreBoardRecord(),
     action: ActionTypesInfer<typeof actions>
 ) => {
     switch (action.type) {
         case types.ADD_BOARDS:
             action.boards.forEach((item: Board) => {
-                state = state.set(item.id, item);
+                state = state.setIn(["collection", item.id], item);
             });
-            return state;
+            return state.set("boardsLoadingState", loadingState.isLoaded);
+
+        case types.LOAD_BOARDS_ERROR:
+            return state.set("boardsLoadingState", loadingState.isError);
 
         default:
             return state;

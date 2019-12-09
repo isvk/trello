@@ -6,6 +6,11 @@ export const loadBoards = () =>
         type: types.LOAD_BOARDS
     } as const);
 
+export const loadBoardsError = () =>
+    ({
+        type: types.LOAD_BOARDS_ERROR
+    } as const);
+
 export const addBoards = (boards: Board[]) =>
     ({
         type: types.ADD_BOARDS,
