@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import Auth from "src/components/Auth/Auth";
-import AuthSuccess from "src/components/AuthSuccess/AuthSuccess";
+import AuthSuccess from "src/components/Auth/AuthSuccess/AuthSuccess";
 import ListBoardsPageContainer from "./components/ListBoardsPage/ListBoardsPageContainer";
 import BoardPageContainer from "./components/BoardPage/BoardPageContainer";
 
