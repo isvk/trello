@@ -2,6 +2,7 @@ import { createSelector } from "reselect";
 import { IStore } from "src/store/rootReducer";
 import { getIdMember, getToken, getKey } from "src/store/auth/selectors";
 import { getBoards, getBoardsLoadingState } from "src/store/boards/selectors";
+import { getIdList, getName } from "src/store/createCard/selectors";
 
 const propsFirstSelector = (_: IStore, prop: any) => prop;
 
@@ -26,3 +27,7 @@ export const cardState = (state: IStore) => state.cards;
 export const cardsGetCardsByIdList = createSelector(cardState, propsFirstSelector, (cards, idList) =>
     cards.filter(card => card.idList === idList)
 );
+
+export const createCardState = (state: IStore) => state.createCard;
+export const createCardGetIdList = createSelector(createCardState, getIdList);
+export const createCardGetName = createSelector(createCardState, getName);

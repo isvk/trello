@@ -5,6 +5,7 @@ import auth, { TStoreAuth } from "./auth/reducer";
 import boards, { TStoreBoard } from "./boards/reducer";
 import lists, { TStoreList } from "./lists/reducer";
 import cards, { TStoreCard } from "./cards/reducer";
+import createCard, { TStoreCreateCard } from "./createCard/reducer";
 
 export interface IStore {
     router: typeof connectRouter;
@@ -12,6 +13,7 @@ export interface IStore {
     boards: TStoreBoard;
     lists: TStoreList;
     cards: TStoreCard;
+    createCard: TStoreCreateCard;
 }
 
 const createRootReducer = (history: History<LocationState>) =>
@@ -20,7 +22,8 @@ const createRootReducer = (history: History<LocationState>) =>
         auth,
         boards,
         lists,
-        cards
+        cards,
+        createCard
     });
 
 export default createRootReducer;
