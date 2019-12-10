@@ -1,7 +1,7 @@
 import React from "react";
 import ListModel from "src/models/list";
 import { TStoreCard } from "src/store/cards/reducer";
-import CardList from "src/components/BoardPage/CardList/CardList";
+import CardListContainer from "src/components/BoardPage/CardList/CardListContainer";
 
 import "./List.scss";
 
@@ -12,7 +12,7 @@ export default function List(props: { list: ListModel; cards: TStoreCard }) {
                 <div className="name">{props.list.name}</div>
                 <div className="amountCards">({props.cards.size})</div>
             </div>
-            <CardList cards={props.cards} idList={props.list.id} />
+            <CardListContainer cards={props.cards} idList={props.list.id} />
         </div>
     );
 }
