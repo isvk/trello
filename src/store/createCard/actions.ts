@@ -11,3 +11,5 @@ export const setIdList = (idList: string) =>
         type: types.SET_ID_LIST,
         idList
     } as const);
+
+export const deleteCreateCard = () => ({ type: types.DELETE_CREATE_CARD } as const);
