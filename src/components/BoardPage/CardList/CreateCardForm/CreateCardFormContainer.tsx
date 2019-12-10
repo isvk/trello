@@ -1,15 +1,25 @@
 import React from "react";
 import useCustomDispatch from "src/hooks/useCustomDispatch";
 import useCustomSelector from "src/hooks/useCustomSelector";
-import { createCardGetName } from "src/store/rootSelector";
+import { createCardState } from "src/store/rootSelector";
 import { deleteCreateCard, setName } from "src/store/createCard/actions";
+import { createCard as createCardAction } from "src/store/cards/actions";
 import CreateCardForm from "./CreateCardForm";
 
 export default function CreateCardFormContainer() {
     const dispatch = useCustomDispatch();
-    const name = useCustomSelector(createCardGetName);
+    const createCard = useCustomSelector(createCardState);
     const handleCreateCard = (name: string) => dispatch(setName(name));
     const handleCloseForm = () => dispatch(deleteCreateCard());
+    const handleSave = (idList: string, name: string) => dispatch(createCardAction(idList, name));
 
-    return <CreateCardForm name={name} handleSetName={handleCreateCard} handleCloseForm={handleCloseForm} />;
+    return (
+        <CreateCardForm
+            idList={createCard.idList}
+            name={createCard.name}
+            handleSetName={handleCreateCard}
+            handleCloseForm={handleCloseForm}
+            handleSave={handleSave}
+        />
+    );
 }

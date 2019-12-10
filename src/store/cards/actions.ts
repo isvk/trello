@@ -12,3 +12,10 @@ export const loadCardsForBoard = (idBoard: string) =>
         type: types.LOAD_CARDS_FOR_BOARD,
         idBoard
     } as const);
+
+export const createCard = (idList: string, name: string) =>
+    ({
+        type: types.CREATE_CARD,
+        idList,
+        name
+    } as const);

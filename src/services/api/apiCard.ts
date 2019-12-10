@@ -16,4 +16,9 @@ export default class ApiCard {
     loadCardsForBoard = (idBoard: string): Promise<IApiCard> => {
         return this.http.get("boards/" + idBoard + "/cards/");
     };
+
+    create = (idList: string, name: string): Promise<IApiCard> => {
+        const keepFromSource = "all";
+        return this.http.post("cards", { idList, name, keepFromSource });
+    };
 }
