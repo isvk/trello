@@ -40,3 +40,15 @@ export const updateCardSuccess = (card: Card) =>
         type: types.UPDATE_CARD_SUCCESS,
         card
     } as const);
+
+export const deleteCard = (id: string) =>
+    ({
+        type: types.DELETE_CARD,
+        id
+    } as const);
+
+export const deleteCardSuccess = (id: string) =>
+    ({
+        type: types.DELETE_CARD_SUCCESS,
+        id
+    } as const);

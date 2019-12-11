@@ -4,3 +4,5 @@ export const CREATE_CARD = "CREATE_CARD";
 export const UPDATE_CARD = "UPDATE_CARD";
 export const UPDATE_CARD_SUCCESS = "UPDATE_CARD_SUCCESS";
 export const SET_MODE = "SET_MODE";
+export const DELETE_CARD = "DELETE_CARD";
+export const DELETE_CARD_SUCCESS = "DELETE_CARD_SUCCESS";

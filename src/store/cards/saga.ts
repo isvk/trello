@@ -3,7 +3,15 @@ import { put, call, takeEvery } from "@redux-saga/core/effects";
 import * as types from "./types";
 import Card from "src/models/card";
 import { IApiCard } from "src/services/api/apiCard";
-import { addCards, loadCardsForBoard, createCard, updateCard, updateCardSuccess } from "./actions";
+import {
+    addCards,
+    loadCardsForBoard,
+    createCard,
+    updateCard,
+    updateCardSuccess,
+    deleteCard,
+    deleteCardSuccess
+} from "./actions";
 import { setCardsLoaded, loadCardsForBoardError } from "src/store/boards/actions";
 import { deleteCreateCard } from "../createCard/actions";
 
@@ -36,8 +44,18 @@ function* updateCardAsync(services: typeof bottle, action: ReturnType<typeof upd
     }
 }
 
+function* deleteCardAsync(services: typeof bottle, action: ReturnType<typeof deleteCard>) {
+    try {
+        yield call(services.container.ApiCard.delete, action.id);
+        yield put(deleteCardSuccess(action.id));
+    } catch (e) {
+        console.error(e);
+    }
+}
+
 export default function* cardSaga(services: typeof bottle) {
     yield takeEvery(types.LOAD_CARDS_FOR_BOARD, loadCardsForBoardAsync, services);
     yield takeEvery(types.CREATE_CARD, createCardAsync, services);
     yield takeEvery(types.UPDATE_CARD, updateCardAsync, services);
+    yield takeEvery(types.DELETE_CARD, deleteCardAsync, services);
 }

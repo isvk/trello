@@ -25,4 +25,8 @@ export default class ApiCard {
     update = (id: string, name: string) => {
         return this.http.put("cards/" + id, { name });
     };
+
+    delete = (id: string) => {
+        return this.http.delete("cards/" + id);
+    };
 }
