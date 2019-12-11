@@ -2,14 +2,16 @@ import React from "react";
 import { TStoreCard } from "src/store/cards/reducer";
 import { Mode } from "src/store/mode";
 import CardContainer from "./Card/CardContainer";
-import AddCardContainer from "./AddCard/AddCardContainer";
-import CardEditFormContainer from "./CardEditForm/CardEditFormContainer";
+import CreateCardButtonContainer from "./CreateCardButton/CreateCardButtonContainer";
+import EditCardFormContainer from "./EditCardForm/EditCardFormContainer";
+import CreateCardFormContainer from "./CreateCardForm/CreateCardFormContainer";
 
 import "./CardList.scss";
 
 interface ICardListProps {
     cards: TStoreCard;
     idList: string;
+    createCardIdList: string;
 }
 
 export default function CardList(props: ICardListProps) {
@@ -19,12 +21,17 @@ export default function CardList(props: ICardListProps) {
                 .valueSeq()
                 .map(card =>
                     card.mode === Mode.editing ? (
-                        <CardEditFormContainer key={card.id} card={card} />
+                        <EditCardFormContainer key={card.id} card={card} />
                     ) : (
                         <CardContainer key={card.id} card={card} />
                     )
                 )}
-            <AddCardContainer idList={props.idList} />
+
+            {props.idList === props.createCardIdList ? (
+                <CreateCardFormContainer />
+            ) : (
+                <CreateCardButtonContainer idList={props.idList} />
+            )}
         </div>
     );
 }
