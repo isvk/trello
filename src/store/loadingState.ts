@@ -1,4 +1,4 @@
-export enum loadingState {
+export enum LoadingState {
     isNotLoaded,
     isLoading,
     isLoaded,

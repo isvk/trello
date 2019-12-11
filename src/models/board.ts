@@ -1,16 +1,16 @@
 import { Record } from "immutable";
-import { loadingState } from "src/store/loadingState";
+import { LoadingState } from "src/store/loadingState";
 
 export interface IBoard {
     id: string;
     name: string;
-    cardsLoadingState: loadingState;
+    cardsLoadingState: LoadingState;
 }
 
 const initialItem: IBoard = {
     id: "",
     name: "",
-    cardsLoadingState: loadingState.isNotLoaded
+    cardsLoadingState: LoadingState.isNotLoaded
 };
 
 export default class Board extends Record(initialItem) implements IBoard {}
