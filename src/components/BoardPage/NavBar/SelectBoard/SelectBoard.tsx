@@ -1,11 +1,13 @@
 import React from "react";
 import { TStoreBoard } from "src/store/boards/reducer";
 
-export default function SelectBoard(props: {
+interface ISelectBoardProps {
     boards: TStoreBoard;
     idBoard: string;
     handleRedirectToBoard: { (idBoard: string): void };
-}) {
+}
+
+export default function SelectBoard(props: ISelectBoardProps) {
     return (
         <div className="buttonSelectBoard">
             <select onChange={e => props.handleRedirectToBoard(e.target.value)} value={props.idBoard}>

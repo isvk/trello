@@ -5,7 +5,11 @@ import { LoadingState } from "src/store/loadingState";
 import Board from "src/models/board";
 import Preloader from "src/components/Preloader/Preloader";
 
-export default function LoadCardsContainer(props: { board: Board }) {
+interface ILoadCardsContainerProps {
+    board: Board;
+}
+
+export default function LoadCardsContainer(props: ILoadCardsContainerProps) {
     const dispatch = useCustomDispatch();
 
     useEffect(() => {

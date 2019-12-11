@@ -3,7 +3,11 @@ import SelectBoardContainer from "src/components/BoardPage/NavBar/SelectBoard/Se
 
 import "./NavBar.scss";
 
-export default function NavBar(props: { idBoard: string }) {
+interface INavBarProps {
+    idBoard: string;
+}
+
+export default function NavBar(props: INavBarProps) {
     return (
         <div className="navBar">
             <SelectBoardContainer idBoard={props.idBoard} />

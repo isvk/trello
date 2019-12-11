@@ -7,7 +7,12 @@ import CardEditFormContainer from "./CardEditForm/CardEditFormContainer";
 
 import "./CardList.scss";
 
-export default function CardList(props: { cards: TStoreCard; idList: string }) {
+interface ICardListProps {
+    cards: TStoreCard;
+    idList: string;
+}
+
+export default function CardList(props: ICardListProps) {
     return (
         <div className="cardList">
             {props.cards

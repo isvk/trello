@@ -4,7 +4,11 @@ import ListContainer from "./List/ListContainer";
 
 import "./ListList.scss";
 
-export default function ListList(props: { lists: TStoreList }) {
+interface IListListProps {
+    lists: TStoreList;
+}
+
+export default function ListList(props: IListListProps) {
     return (
         <div className="listList">
             {props.lists.valueSeq().map(list => (

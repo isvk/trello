@@ -5,7 +5,12 @@ import CardListContainer from "src/components/BoardPage/CardList/CardListContain
 
 import "./List.scss";
 
-export default function List(props: { list: ListModel; cards: TStoreCard }) {
+interface IListProps {
+    list: ListModel;
+    cards: TStoreCard;
+}
+
+export default function List(props: IListProps) {
     return (
         <div className="list">
             <div className="title">

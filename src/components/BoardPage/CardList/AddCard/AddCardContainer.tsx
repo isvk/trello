@@ -6,7 +6,11 @@ import { setIdList } from "src/store/createCard/actions";
 import { createCardGetIdList } from "src/store/rootSelector";
 import CreateCardFormContainer from "src/components/BoardPage/CardList/CreateCardForm/CreateCardFormContainer";
 
-export default function AddCardContainer(props: { idList: string }) {
+interface IAddCardContainerProps {
+    idList: string;
+}
+
+export default function AddCardContainer(props: IAddCardContainerProps) {
     const dispatch = useCustomDispatch();
 
     const handleShowCreateCard = (idList: string) => {

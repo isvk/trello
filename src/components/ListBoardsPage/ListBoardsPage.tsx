@@ -2,7 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { TStoreBoard } from "src/store/boards/reducer";
 
-export default function ListBoardsPage(props: { boards: TStoreBoard }) {
+interface ListBoardsPageProps {
+    boards: TStoreBoard;
+}
+
+export default function ListBoardsPage(props: ListBoardsPageProps) {
     return (
         <div>
             <h1>List Boards</h1>
