@@ -1,11 +1,10 @@
 import * as types from "./types";
 import { ActionTypesInfer } from "src/store/actionTypes";
 import * as actions from "src/store/createCard/actions";
-import CreateCardModel from "src/models/createCard";
+import Card from "src/models/card";
 
-export type TStoreCreateCard = CreateCardModel;
-
-const initialState = new CreateCardModel({ idList: "", name: "" });
+export type TStoreCreateCard = Card;
+const initialState = new Card();
 
 const reducer = (state: TStoreCreateCard = initialState, action: ActionTypesInfer<typeof actions>) => {
     switch (action.type) {
