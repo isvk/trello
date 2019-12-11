@@ -3,15 +3,15 @@ import { ActionTypesInfer } from "src/store/actionTypes";
 import * as types from "./types";
 import * as actions from "./actions";
 import Board from "src/models/board";
-import { loadingState } from "src/store/loadingState";
+import { LoadingState } from "src/store/loadingState";
 
 export interface IStoreBoardRecord {
-    boardsLoadingState: loadingState;
+    boardsLoadingState: LoadingState;
     collection: Map<string, Board>;
 }
 
 const initialItem: IStoreBoardRecord = {
-    boardsLoadingState: loadingState.isNotLoaded,
+    boardsLoadingState: LoadingState.isNotLoaded,
     collection: Map([])
 };
 
@@ -25,21 +25,21 @@ const reducer = (state: TStoreBoard = new StoreBoardRecord(), action: ActionType
             action.boards.forEach((item: Board) => {
                 state = state.setIn(["collection", item.id], item);
             });
-            return state.set("boardsLoadingState", loadingState.isLoaded);
+            return state.set("boardsLoadingState", LoadingState.isLoaded);
 
         case types.LOAD_BOARDS_ERROR:
-            return state.set("boardsLoadingState", loadingState.isError);
+            return state.set("boardsLoadingState", LoadingState.isError);
 
         case types.SET_CARDS_LOADED:
             return state.updateIn(
                 ["collection", action.id],
-                item => item && item.set("cardsLoadingState", loadingState.isLoaded)
+                item => item && item.set("cardsLoadingState", LoadingState.isLoaded)
             );
 
         case types.LOAD_CARDS_FOR_BOARD_ERROR:
             return state.updateIn(
                 ["collection", action.id],
-                item => item && item.set("cardsLoadingState", loadingState.isError)
+                item => item && item.set("cardsLoadingState", LoadingState.isError)
             );
 
         default:

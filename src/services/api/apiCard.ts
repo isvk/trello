@@ -21,4 +21,8 @@ export default class ApiCard {
         const keepFromSource = "all";
         return this.http.post("cards", { idList, name, keepFromSource });
     };
+
+    update = (id: string, name: string) => {
+        return this.http.put("cards/" + id, { name });
+    };
 }

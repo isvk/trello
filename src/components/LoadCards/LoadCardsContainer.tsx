@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import useCustomDispatch from "src/hooks/useCustomDispatch";
 import { loadCardsForBoard } from "src/store/cards/actions";
-import { loadingState } from "src/store/loadingState";
+import { LoadingState } from "src/store/loadingState";
 import Board from "src/models/board";
 import Preloader from "src/components/Preloader/Preloader";
 
@@ -13,10 +13,10 @@ export default function LoadCardsContainer(props: { board: Board }) {
     }, [props.board, dispatch]);
 
     switch (props.board.cardsLoadingState) {
-        case loadingState.isNotLoaded:
-        case loadingState.isLoading:
+        case LoadingState.isNotLoaded:
+        case LoadingState.isLoading:
             return <Preloader />;
-        case loadingState.isError:
+        case LoadingState.isError:
             return <h1>Error loading cards</h1>;
     }
 

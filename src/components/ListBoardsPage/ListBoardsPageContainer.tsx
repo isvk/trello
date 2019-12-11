@@ -1,14 +1,14 @@
 import React from "react";
 import useCustomSelector from "src/hooks/useCustomSelector";
 import { boardState } from "src/store/rootSelector";
-import { loadingState } from "src/store/loadingState";
+import { LoadingState } from "src/store/loadingState";
 import LoadBoardsWithListsContainer from "src/components/LoadBoardsWithLists/LoadBoardsWithListsContainer";
 import ListBoardsPage from "./ListBoardsPage";
 
 export default function ListBoardsPageContainer() {
     const boards = useCustomSelector(boardState);
 
-    if (boards.boardsLoadingState === loadingState.isNotLoaded) {
+    if (boards.boardsLoadingState === LoadingState.isNotLoaded) {
         return <LoadBoardsWithListsContainer />;
     }
 

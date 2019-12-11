@@ -14,6 +14,12 @@ const reducer = (state: TStoreCard = Map([]), action: ActionTypesInfer<typeof ac
             });
             return state;
 
+        case types.SET_MODE:
+            return state.setIn([action.id, "mode"], action.mode);
+
+        case types.UPDATE_CARD_SUCCESS:
+            return state.set(action.card.id, action.card);
+
         default:
             return state;
     }
