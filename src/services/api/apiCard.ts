@@ -4,6 +4,7 @@ export interface IApiCard {
     id: string;
     idList: string;
     name: string;
+    pos: number;
 }
 
 export default class ApiCard {
