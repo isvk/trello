@@ -14,7 +14,7 @@ export default function EditCardFormContainer(props: IEditCardFormContainerProps
     const [card, setCard] = useState(props.card);
     const handleChangeName = (name: string) => setCard(props.card.set("name", name));
     const handleButtonClose = () => dispatch(setMode(props.card.id, Mode.viewing));
-    const handleButtonSave = () => dispatch(updateCardAction(card.id, card.name));
+    const handleButtonSave = () => dispatch(updateCardAction(card.id, card));
 
     return (
         <NameCardForm

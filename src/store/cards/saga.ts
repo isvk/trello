@@ -37,7 +37,7 @@ function* createCardAsync(services: typeof bottle, action: ReturnType<typeof cre
 
 function* updateCardAsync(services: typeof bottle, action: ReturnType<typeof updateCard>) {
     try {
-        const card = yield call(services.container.ApiCard.update, action.id, action.name);
+        const card = yield call(services.container.ApiCard.update, action.id, action.card);
         yield put(updateCardSuccess(new Card(card)));
     } catch (e) {
         console.error(e);

@@ -28,11 +28,11 @@ export const setMode = (id: string, mode: Mode) =>
         mode
     } as const);
 
-export const updateCard = (id: string, name: string) =>
+export const updateCard = (id: string, card: Card) =>
     ({
         type: types.UPDATE_CARD,
         id,
-        name
+        card
     } as const);
 
 export const updateCardSuccess = (card: Card) =>
