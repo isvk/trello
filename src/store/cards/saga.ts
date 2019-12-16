@@ -10,7 +10,8 @@ import {
     updateCard,
     updateCardSuccess,
     deleteCard,
-    deleteCardSuccess
+    deleteCardSuccess,
+    sortByPos
 } from "./actions";
 import { setCardsLoaded, loadCardsForBoardError } from "src/store/boards/actions";
 import { deleteCreateCard } from "../createCard/actions";
@@ -19,6 +20,7 @@ function* loadCardsForBoardAsync(services: typeof bottle, action: ReturnType<typ
     try {
         const cards = yield call(services.container.ApiCard.loadCardsForBoard, action.idBoard);
         yield put(addCards(cards.map((card: IApiCard) => new Card(card))));
+        yield put(sortByPos());
         yield put(setCardsLoaded(action.idBoard));
     } catch (e) {
         yield put(loadCardsForBoardError(action.idBoard));
