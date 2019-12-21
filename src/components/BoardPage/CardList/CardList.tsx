@@ -1,6 +1,7 @@
 import React from "react";
 import { TStoreCard } from "src/store/cards/reducer";
 import { Mode } from "src/store/mode";
+import { Droppable } from "react-beautiful-dnd";
 import CardContainer from "./Card/CardContainer";
 import CreateCardButtonContainer from "./CreateCardButton/CreateCardButtonContainer";
 import EditCardFormContainer from "./EditCardForm/EditCardFormContainer";
@@ -16,22 +17,27 @@ interface ICardListProps {
 
 export default function CardList(props: ICardListProps) {
     return (
-        <div className="cardList">
-            {props.cards
-                .valueSeq()
-                .map(card =>
-                    card.mode === Mode.editing ? (
-                        <EditCardFormContainer key={card.id} card={card} />
-                    ) : (
-                        <CardContainer key={card.id} card={card} />
-                    )
-                )}
+        <Droppable droppableId={props.idList}>
+            {provided => (
+                <div {...provided.droppableProps} ref={provided.innerRef} className="cardList">
+                    {props.cards
+                        .valueSeq()
+                        .map((card, index) =>
+                            card.mode === Mode.editing ? (
+                                <EditCardFormContainer key={card.id} card={card} />
+                            ) : (
+                                <CardContainer key={card.id} card={card} index={index} />
+                            )
+                        )}
 
-            {props.idList === props.createCardIdList ? (
-                <CreateCardFormContainer />
-            ) : (
-                <CreateCardButtonContainer idList={props.idList} />
+                    {props.idList === props.createCardIdList ? (
+                        <CreateCardFormContainer />
+                    ) : (
+                        <CreateCardButtonContainer idList={props.idList} />
+                    )}
+                    {provided.placeholder}
+                </div>
             )}
-        </div>
+        </Droppable>
     );
 }

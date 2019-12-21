@@ -23,8 +23,8 @@ export default class ApiCard {
         return this.http.post("cards", { idList, name, keepFromSource });
     };
 
-    update = (id: string, name: string) => {
-        return this.http.put("cards/" + id, { name });
+    update = (id: string, card: IApiCard) => {
+        return this.http.put("cards/" + id, card);
     };
 
     delete = (id: string) => {

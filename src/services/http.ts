@@ -30,7 +30,6 @@ export default class Http implements IHttp {
         if (!data.key) data.key = process.env.REACT_APP_API_KEY;
 
         const parameters = Object.keys(data)
-            .filter(key => typeof data[key] === "string")
             .map(key => key + "=" + data[key])
             .join("&");
 

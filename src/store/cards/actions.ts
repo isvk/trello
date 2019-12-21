@@ -53,7 +53,17 @@ export const deleteCardSuccess = (id: string) =>
         id
     } as const);
 
-export const sortByPos = () =>
+export const sortByPosition = () =>
     ({
-        type: types.SORT_BY_POS
+        type: types.SORT_BY_POSITION
+    } as const);
+
+export const sortCard = (id: string, idList: string, idBoard: string, newIndex: number, oldIndex: number) =>
+    ({
+        type: types.SORT_CARD,
+        id,
+        idList,
+        idBoard,
+        newIndex,
+        oldIndex
     } as const);

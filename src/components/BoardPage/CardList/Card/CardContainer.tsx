@@ -4,8 +4,9 @@ import Card from "./Card";
 
 interface ICardContainerProps {
     card: CardModel;
+    index: number;
 }
 
 export default function CardContainer(props: ICardContainerProps) {
-    return <Card card={props.card} />;
+    return <Card card={props.card} index={props.index} />;
 }

@@ -27,6 +27,9 @@ export const cardState = (state: IStore) => state.cards;
 export const cardsGetCardsByIdList = createSelector(cardState, propsFirstSelector, (cards, idList) =>
     cards.filter(card => card.idList === idList)
 );
+export const cardsGetById = createSelector(cardState, propsFirstSelector, (cards, id) => {
+    return cards.find(card => card.id === id);
+});
 
 export const createCardState = (state: IStore) => state.createCard;
 export const createCardGetIdList = createSelector(createCardState, getIdList);

@@ -6,4 +6,5 @@ export const UPDATE_CARD_SUCCESS = "UPDATE_CARD_SUCCESS";
 export const SET_MODE = "SET_MODE";
 export const DELETE_CARD = "DELETE_CARD";
 export const DELETE_CARD_SUCCESS = "DELETE_CARD_SUCCESS";
-export const SORT_BY_POS = "SORT_BY_POS";
+export const SORT_BY_POSITION = "SORT_BY_POSITION";
+export const SORT_CARD = "SORT_CARD";
