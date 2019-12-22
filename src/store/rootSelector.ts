@@ -22,6 +22,9 @@ export const listState = (state: IStore) => state.lists;
 export const listsGetListsByIdBoard = createSelector(listState, propsFirstSelector, (lists, idBoard) =>
     lists.filter(list => list.idBoard === idBoard)
 );
+export const listsGetById = createSelector(listState, propsFirstSelector, (lists, id) => {
+    return lists.find(list => list.id === id);
+});
 
 export const cardState = (state: IStore) => state.cards;
 export const cardsGetCardsByIdList = createSelector(cardState, propsFirstSelector, (cards, idList) =>

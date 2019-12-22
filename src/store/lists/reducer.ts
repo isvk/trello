@@ -14,6 +14,22 @@ const reducer = (state: TStoreList = Map([]), action: ActionTypesInfer<typeof ac
             });
             return state;
 
+        case types.SET_MODE:
+            return state.setIn([action.id, "mode"], action.mode);
+
+        case types.UPDATE_LIST_SUCCESS:
+            return state.set(action.list.id, action.list);
+
+        case types.DELETE_LIST_SUCCESS:
+            return state.delete(action.id);
+
+        case types.SORT_BY_POSITION:
+            return state.sort((a: List, b: List) => {
+                if (a.pos < b.pos) return -1;
+                if (a.pos > b.pos) return 1;
+                return 0;
+            });
+
         default:
             return state;
     }

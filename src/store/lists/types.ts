@@ -1,1 +1,9 @@
 export const ADD_LISTS = "ADD_LISTS";
+export const CREATE_LIST = "CREATE_LIST";
+export const UPDATE_LIST = "UPDATE_LIST";
+export const UPDATE_LIST_SUCCESS = "UPDATE_LIST_SUCCESS";
+export const SET_MODE = "SET_MODE";
+export const DELETE_LIST = "DELETE_LIST";
+export const DELETE_LIST_SUCCESS = "DELETE_LIST_SUCCESS";
+export const SORT_BY_POSITION = "SORT_BY_POSITION";
+export const SORT_LIST = "SORT_LIST";

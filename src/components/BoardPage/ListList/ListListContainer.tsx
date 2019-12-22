@@ -5,6 +5,7 @@ import useCustomDispatch from "src/hooks/useCustomDispatch";
 import { listsGetListsByIdBoard } from "src/store/rootSelector";
 import { sortCard } from "src/store/cards/actions";
 import ListList from "./ListList";
+import { sortList } from "src/store/lists/actions";
 
 interface IListListContainerProps {
     idBoard: string;
@@ -22,16 +23,27 @@ export default function ListListContainer(props: IListListContainerProps) {
         )
             return false;
 
-        dispatch(
-            sortCard(
-                result.draggableId,
-                result.destination.droppableId,
-                props.idBoard,
-                result.destination.index,
-                result.source.index
-            )
-        );
+        if (result.destination.droppableId === props.idBoard) {
+            dispatch(
+                sortList(
+                    result.draggableId,
+                    result.destination.droppableId,
+                    result.destination.index,
+                    result.source.index
+                )
+            );
+        } else {
+            dispatch(
+                sortCard(
+                    result.draggableId,
+                    result.destination.droppableId,
+                    props.idBoard,
+                    result.destination.index,
+                    result.source.index
+                )
+            );
+        }
     };
 
-    return <ListList lists={lists} onDragEnd={onDragEnd} />;
+    return <ListList idBoard={props.idBoard} lists={lists} onDragEnd={onDragEnd} />;
 }
