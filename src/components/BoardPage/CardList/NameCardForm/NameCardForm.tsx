@@ -9,6 +9,7 @@ interface ICreateCardFormProps {
     handleChangeName(name: string): void;
     handleButtonClose(): void;
     handleButtonSave(): void;
+    typeSave: "create" | "update";
 }
 
 export default function NameCardForm(props: ICreateCardFormProps) {
@@ -21,8 +22,13 @@ export default function NameCardForm(props: ICreateCardFormProps) {
             />
             <div className="panel">
                 <button className="saveCardButton" onClick={props.handleButtonSave}>
-                    <FontAwesomeIcon icon={faPlus} className="icon" />
-                    Добавить карточку
+                    {props.typeSave === "create" && (
+                        <>
+                            <FontAwesomeIcon icon={faPlus} className="icon" />
+                            Добавить карточку
+                        </>
+                    )}
+                    {props.typeSave === "update" && <>Сохранить</>}
                 </button>
                 <button className="closeNameCardForm" onClick={props.handleButtonClose}>
                     <FontAwesomeIcon icon={faTimes} className="icon" />

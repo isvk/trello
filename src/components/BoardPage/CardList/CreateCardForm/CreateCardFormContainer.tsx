@@ -19,6 +19,7 @@ export default function CreateCardFormContainer() {
             handleChangeName={handleChangeName}
             handleButtonClose={handleCloseForm}
             handleButtonSave={handleSave}
+            typeSave="create"
         />
     );
 }

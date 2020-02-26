@@ -22,6 +22,7 @@ export default function EditCardFormContainer(props: IEditCardFormContainerProps
             handleChangeName={handleChangeName}
             handleButtonClose={handleButtonClose}
             handleButtonSave={handleButtonSave}
+            typeSave="update"
         />
     );
 }
