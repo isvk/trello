@@ -24,6 +24,7 @@ export default function ListList(props: IListListProps) {
                                         {...provided.draggableProps}
                                         {...provided.dragHandleProps}
                                         ref={provided.innerRef}
+                                        className="wrapperList"
                                     >
                                         <ListContainer list={list} key={list.id} />
                                     </div>

@@ -1,14 +1,47 @@
 .card {
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 0.5px 1px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    margin: 8px 0;
+    padding: 8px;
+    min-height: 20px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    display: block;
+    position: relative;
+    color: #172b4d;
 
     .name {
         flex-grow: 1;
+        font-size: 14px;
+        word-break: break-word;
     }
-    button {
-        margin-right: 5px;
+    .panel {
+        display: none;
+    }
+
+    &:hover {
+        background: #f4f5f7;
+
+        .panel {
+            display: flex;
+            position: absolute;
+            padding: 8px;
+            top: 2px;
+            right: 2px;
+            color: #5e6c84;
+            border-radius: 2px;
+            background-color: rgba(244, 245, 247, 0.5);
+
+            &:hover {
+                background-color: #ebecf0;
+            }
+
+            > button {
+                display: block;
+                margin: 0 1px;
+                border: none;
+                background: none;
+                font-size: 12px;
+            }
+        }
     }
 }

@@ -1,30 +1,27 @@
 .list {
-    margin: 5px 5px 0 5px;
-    padding: 15px;
-    width: 375px;
-    min-width: 375px;
+    margin: 4px;
+    padding: 8px;
+
+    background-color: #ebecf0;
+    border-radius: 2px;
+
     align-items: stretch;
-    border-top-color: #cccccc;
-    border-top-style: solid;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    border-top-width: 5px;
-    background-color: #f6f6f6;
     box-sizing: border-box;
 
     .title {
         display: flex;
         flex-wrap: nowrap;
-        height: 25px;
+        color: #172b4d;
+        font-weight: 600;
+        font-size: 14px;
+        padding-left: 8px;
 
         .name {
             width: 100%;
-            height: 25px;
             overflow: hidden;
             word-wrap: normal;
             white-space: nowrap;
             text-overflow: ellipsis;
-            font-weight: bold;
         }
 
         .amountCards {

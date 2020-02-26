@@ -1,5 +1,9 @@
 import React from "react";
 import Modal from "src/components/Modal/Modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+
+import "./DeleteCardButton.scss";
 
 interface IDeleteCardButtonProps {
     showModal: boolean;
@@ -12,14 +16,16 @@ export default function DeleteCardButton(props: IDeleteCardButtonProps) {
     return (
         <>
             {props.showModal && (
-                <Modal title="Delete card?" onClose={props.handleCloseModal}>
-                    <div className="wrapper-buttons">
+                <Modal title="Удалить карточку?" onClose={props.handleCloseModal}>
+                    <div className="wrapperButtons">
                         <button onClick={props.handleConfirmationDelete}>Да</button>
                         <button onClick={props.handleCloseModal}>Нет</button>
                     </div>
                 </Modal>
             )}
-            <button onClick={props.handleButtonDelete}>Delete</button>
+            <button className="deleteCardButton" onClick={props.handleButtonDelete}>
+                <FontAwesomeIcon icon={faTrashAlt} className="icon" />
+            </button>
         </>
     );
 }

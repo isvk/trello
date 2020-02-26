@@ -15,15 +15,15 @@ export default function Modal(props: IModalProps) {
     if (domElement) {
         return ReactDOM.createPortal(
             <div id="openModal" className="modal">
-                <div className="modal-dialog">
-                    <div className="modal-content">
+                <div className="modalDialog">
+                    <div className="modalContent">
                         <div className="modal-header">
-                            <h3 className="modal-title">{props.title}</h3>
+                            <h3 className="modalTitle">{props.title}</h3>
                             <a href="#close" title="Close" className="close" onClick={props.onClose}>
                                 ×
                             </a>
                         </div>
-                        <div className="modal-body">{props.children}</div>
+                        <div className="modalBody">{props.children}</div>
                     </div>
                 </div>
             </div>,

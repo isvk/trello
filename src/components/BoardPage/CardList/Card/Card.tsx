@@ -12,8 +12,10 @@ interface ICardProps {
 export default function Card(props: ICardProps) {
     return (
         <div className="card">
-            <EditCardButtonContainer idCard={props.card.id} />
-            <DeleteCardButtonContainer idCard={props.card.id} />
+            <div className="panel">
+                <EditCardButtonContainer idCard={props.card.id} />
+                <DeleteCardButtonContainer idCard={props.card.id} />
+            </div>
             <div className="name">{props.card.name}</div>
         </div>
     );

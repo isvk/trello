@@ -1,36 +1,33 @@
-/* свойства модального окна по умолчанию */
 .modal {
-    position: fixed; /* фиксированное положение */
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.5); /* цвет фона */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1050;
-    opacity: 1; /* по умолчанию модальное окно прозрачно */
-    transition: opacity 200ms ease-in; /* анимация перехода */
-    pointer-events: none; /* элемент невидим для событий мыши */
+    opacity: 1;
+    transition: opacity 200ms ease-in;
     margin: 0;
     padding: 0;
 
-    pointer-events: auto; /* элемент видим для событий мыши */
-    overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+    pointer-events: auto;
+    overflow-y: auto;
 }
 
-/* ширина модального окна и его отступы от экрана */
-.modal-dialog {
+.modalDialog {
     position: relative;
     width: auto;
     margin: 10px;
 }
 @media (min-width: 576px) {
-    .modal-dialog {
+    .modalDialog {
         max-width: 500px;
-        margin: 30px auto; /* для отображения модального окна по центру */
+        margin: 30px auto;
     }
 }
-/* свойства для блока, содержащего контент модального окна */
-.modal-content {
+
+.modalContent {
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -49,12 +46,12 @@
     outline: 0;
 }
 @media (min-width: 768px) {
-    .modal-content {
+    .modalContent {
         -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     }
 }
-/* свойства для заголовка модального окна */
+
 .modal-header {
     display: flex;
     align-items: center;
@@ -62,14 +59,15 @@
     padding: 15px;
     border-bottom: 1px solid #eceeef;
 }
-.modal-title {
+
+.modalTitle {
     margin-top: 0;
     margin-bottom: 0;
     line-height: 1.5;
     font-size: 1.25rem;
     font-weight: 500;
 }
-/* свойства для кнопки "Закрыть" */
+
 .close {
     float: right;
     font-family: sans-serif;
@@ -80,17 +78,17 @@
     text-shadow: 0 1px 0 #fff;
     opacity: 0.5;
     text-decoration: none;
+
+    &:focus,
+    &:hover {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        opacity: 0.75;
+    }
 }
-/* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
-.close:focus,
-.close:hover {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-    opacity: 0.75;
-}
-/* свойства для блока, содержащего основное содержимое окна */
-.modal-body {
+
+.modalBody {
     position: relative;
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 auto;
@@ -100,12 +98,23 @@
     overflow: auto;
 }
 
-.wrapper-buttons {
+.wrapperButtons {
     display: flex;
 
     button {
-        border: 1px solid #ccc;
-        margin: 5px;
-        padding: 5px 7px;
+        border: 0;
+        margin: 4px;
+        padding: 8px;
+        min-height: 20px;
+        background-color: #ebecf0;
+        border-radius: 2px;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+        display: block;
+        position: relative;
+        color: #172b4d;
+
+        &:hover {
+            background: #d4d4d9;
+        }
     }
 }
