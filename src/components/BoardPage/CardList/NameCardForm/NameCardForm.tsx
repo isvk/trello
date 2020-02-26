@@ -1,6 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { Close } from "styled-icons/material/Close";
 
 import "./NameCardForm.scss";
 
@@ -22,16 +21,11 @@ export default function NameCardForm(props: ICreateCardFormProps) {
             />
             <div className="panel">
                 <button className="saveCardButton" onClick={props.handleButtonSave}>
-                    {props.typeSave === "create" && (
-                        <>
-                            <FontAwesomeIcon icon={faPlus} className="icon" />
-                            Добавить карточку
-                        </>
-                    )}
+                    {props.typeSave === "create" && <>Добавить карточку</>}
                     {props.typeSave === "update" && <>Сохранить</>}
                 </button>
                 <button className="closeNameCardForm" onClick={props.handleButtonClose}>
-                    <FontAwesomeIcon icon={faTimes} className="icon" />
+                    <Close size="20" />
                 </button>
             </div>
         </div>

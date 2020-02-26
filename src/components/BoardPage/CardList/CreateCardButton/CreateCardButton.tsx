@@ -1,6 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { Plus } from "styled-icons/boxicons-regular/Plus";
 
 import "./CreateCardButton.scss";
 
@@ -11,7 +10,8 @@ interface ICreateCardButtonProps {
 export default function CreateCardButton(props: ICreateCardButtonProps) {
     return (
         <button className="createCardButton" onClick={props.handleShowCreateCardForm}>
-            <FontAwesomeIcon icon={faPlus} className="icon" /> Добавить ещё одну карточку
+            <Plus size="20" />
+            Добавить ещё одну карточку
         </button>
     );
 }

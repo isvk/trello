@@ -1,7 +1,6 @@
 import React from "react";
 import Modal from "src/components/Modal/Modal";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { Trash } from "styled-icons/boxicons-regular/Trash";
 
 import "./DeleteCardButton.scss";
 
@@ -24,7 +23,7 @@ export default function DeleteCardButton(props: IDeleteCardButtonProps) {
                 </Modal>
             )}
             <button className="deleteCardButton" onClick={props.handleButtonDelete}>
-                <FontAwesomeIcon icon={faTrashAlt} className="icon" />
+                <Trash size="14" />
             </button>
         </>
     );
