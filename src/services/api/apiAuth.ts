@@ -12,4 +12,10 @@ export default class ApiAuth {
             return response.idMember;
         });
     };
+
+    apiDeleteToken = (token: string) => {
+        return this.http.delete("tokens/" + token + "/").then((response: any) => {
+            return response._value === null;
+        });
+    };
 }

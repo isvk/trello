@@ -1,0 +1,12 @@
+.logout {
+    display: block;
+    padding: 0 16px;
+    color: #ffffff;
+    background: #252525;
+    border: none;
+    border-radius: 2px;
+    margin-right: 3px;
+    &:hover {
+        background: #424242;
+    }
+}

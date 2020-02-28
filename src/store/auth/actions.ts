@@ -16,3 +16,9 @@ export const loginByTokenSuccess = (idMember: string) =>
         type: types.LOGIN_BY_TOKEN_SUCCESS,
         idMember
     } as const);
+
+export const logoutByToken = (token: string) =>
+    ({
+        type: types.LOGOUT_BY_TOKEN,
+        token
+    } as const);
