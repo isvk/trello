@@ -1,0 +1,79 @@
+.pageListBoards {
+    .head {
+        display: flex;
+        height: 40px;
+        padding: 0 10px;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #026aa7;
+        color: #fff;
+        font-size: 14px;
+
+        .linkHome {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background-color: #4e97c2;
+            border-radius: 2px;
+            color: #fff;
+
+            &:hover {
+                background-color: #3588b9;
+            }
+        }
+    }
+
+    .wrapper-content {
+        display: flex;
+        justify-content: center;
+
+        .contentPageListBoards {
+            width: 1000px;
+        }
+    }
+
+    .title {
+        color: #172b4d;
+        font-size: 14px;
+        font-weight: bold;
+        margin-left: 20px;
+
+        .icon {
+            margin-right: 10px;
+        }
+    }
+
+    .listLinkBoards {
+        display: flex;
+        list-style-type: none;
+        padding: 5px;
+        margin: 0;
+
+        .linkBoard {
+            display: block;
+            width: 193px;
+            height: 96px;
+            margin: 8px;
+            padding: 8px;
+            min-height: 20px;
+            background-color: #6f777b;
+            border-radius: 2px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+
+            &:hover {
+                background-color: #62696d;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .listLinkBoards {
+            flex-flow: column;
+        }
+    }
+}
