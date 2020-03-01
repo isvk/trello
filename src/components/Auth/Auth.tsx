@@ -6,8 +6,8 @@ export default function Auth() {
     const dispatch = useCustomDispatch();
 
     return (
-        <button className="btn-auth" onClick={() => dispatch(redirectToApiForGetToken())}>
-            Auth
-        </button>
+        <a href="#" className="btn-auth" onClick={() => dispatch(redirectToApiForGetToken())}>
+            подтверждения доступа
+        </a>
     );
 }
