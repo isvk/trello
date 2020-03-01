@@ -7,6 +7,9 @@ import AuthSuccess from "src/components/Auth/AuthSuccess/AuthSuccess";
 import ListBoardsPageContainer from "./components/ListBoardsPage/ListBoardsPageContainer";
 import BoardPageContainer from "./components/BoardPage/BoardPageContainer";
 
+import "reset-css";
+import "./App.scss";
+
 const App: React.FC = () => {
     return (
         <Switch>
