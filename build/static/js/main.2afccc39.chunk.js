@@ -228,7 +228,7 @@
                 ne = n(9),
                 re = function() {
                     document.location.href =
-                        "https://trello.com/1/authorize?scope=write&expiration=1day&name=TestTrello&return_url=https://isvk.github.io/trello/build/&scope=read&response_type=token&key=57dec6bd85b077473d5258dd1f499f7b";
+                        "https://trello.com/1/authorize?scope=write&expiration=1day&name=TestTrello&return_url=https://isvk.github.io/trello/build/?scope=read&response_type=token&key=57dec6bd85b077473d5258dd1f499f7b";
                 },
                 ae = function(e) {
                     return Object(ne.d)("/board/" + e);
@@ -1727,7 +1727,7 @@
                     null,
                     a.a.createElement(Bt.a, { exact: !0, path: "/", component: Tt }),
                     a.a.createElement(Bt.a, { exact: !0, path: "/auth" }),
-                    a.a.createElement(Bt.a, { path: "/&scope=read&response_type=token", component: Rt }),
+                    a.a.createElement(Bt.a, { path: "/?scope=read&response_type=token", component: Rt }),
                     a.a.createElement(Bt.a, { exact: !0, path: "/board", component: Yt }),
                     a.a.createElement(Bt.a, { exact: !0, path: "/board/:idBoard", component: xn })
                 );
@@ -1785,4 +1785,4 @@
     },
     [[80, 1, 2]]
 ]);
-//# sourceMappingURL=main.4df94e1f.chunk.js.map
+//# sourceMappingURL=main.2afccc39.chunk.js.map
