@@ -8,7 +8,7 @@ export const redirectToAuthForGetToken = () => {
             window.location.origin +
             packageJson.homepage +
             "%23/auth/save_token/&scope=read&response_type=token&key=" +
-            (process.env.REACT_APP_API_KEY ? process.env.REACT_APP_API_KEY : "57dec6bd85b077473d5258dd1f499f7b");
+            process.env.REACT_APP_API_KEY;
     } else {
         console.error("Not specified env.REACT_APP_API_KEY");
     }
