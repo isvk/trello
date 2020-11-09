@@ -2,19 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
-import { createBrowserHistory } from "history";
+import {createHashHistory} from "history";
 import { routerMiddleware, ConnectedRouter } from "connected-react-router";
 import createSagaMiddleware from "redux-saga";
 import rootReducer from "./store/rootReducer";
 import rootSaga from "./store/rootSaga";
 import services from "./services";
 import * as serviceWorker from "./serviceWorker";
-import * as packageJson from "../package.json";
 import App from "./App";
 
 import "./index.css";
 
-export const history = createBrowserHistory({ basename: packageJson.homepage });
+export const history = createHashHistory();
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(

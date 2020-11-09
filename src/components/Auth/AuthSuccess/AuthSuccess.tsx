@@ -7,7 +7,9 @@ import Preloader from "src/components/Preloader/Preloader";
 export default function AuthSuccess() {
     const dispatch = useCustomDispatch();
     const location = useLocation();
-    const token = location.hash.replace("#token=", "");
+
+    let temp, token = '';
+    token = (temp = location.pathname.match(/^.*token=(.*)/)) ? temp[1] : '';
 
     useEffect(() => {
         dispatch(loginByToken(token));
