@@ -8,8 +8,8 @@ export default function AuthSuccess() {
     const dispatch = useCustomDispatch();
     const location = useLocation();
 
-    let temp, token = '';
-    token = (temp = location.pathname.match(/^.*token=(.*)/)) ? temp[1] : '';
+    let temp = location.pathname.match(/^.*token=(.*)/)
+    let token = (temp) ? temp[1] : '';
 
     useEffect(() => {
         dispatch(loginByToken(token));

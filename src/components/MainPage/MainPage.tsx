@@ -16,7 +16,7 @@ export default function MainPage() {
                     <li>
                         <p>
                             Авторизуйтесь на{" "}
-                            <a href="https://trello.com/login" target="_blank">
+                            <a href="https://trello.com/login" target="_blank" rel="noopener noreferrer">
                                 trello.com
                             </a>{" "}
                             под тестовым аккаунтом
