@@ -13,7 +13,7 @@
 
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
-importScripts("/trello/build/precache-manifest.f10cc83e573b0e1af8b8cb769ef84efb.js");
+importScripts("/trello/build/precache-manifest.12ce9d8375e1ea00eb3228f7021ebaee.js");
 
 self.addEventListener("message", event => {
     if (event.data && event.data.type === "SKIP_WAITING") {
