@@ -9,11 +9,12 @@ import rootReducer from "./store/rootReducer";
 import rootSaga from "./store/rootSaga";
 import services from "./services";
 import * as serviceWorker from "./serviceWorker";
+import * as packageJson from "../package.json";
 import App from "./App";
 
 import "./index.css";
 
-export const history = createBrowserHistory();
+export const history = createBrowserHistory({ basename: packageJson.homepage });
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
