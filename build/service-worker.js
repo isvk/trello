@@ -13,7 +13,7 @@
 
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
-importScripts("/trello/build/precache-manifest.e1c2dc9f2551376de8edec80f6b15aba.js");
+importScripts("/precache-manifest.85f0c4fe5bc19a38dbb93f586e55c86f.js");
 
 self.addEventListener("message", event => {
     if (event.data && event.data.type === "SKIP_WAITING") {
@@ -31,6 +31,6 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/trello/build/index.html"), {
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/index.html"), {
     blacklist: [/^\/_/, /\/[^/?]+\.[^/]+$/]
 });

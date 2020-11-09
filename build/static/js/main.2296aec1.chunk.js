@@ -20,15 +20,15 @@
                 c = n(20),
                 o = n.n(c),
                 i = n(11),
-                u = n(12),
-                s = n(16),
-                l = n(64),
-                d = n(32),
+                s = n(12),
+                u = n(16),
+                d = n(64),
+                l = n(32),
                 m = n(79),
                 f = n(66),
                 p = "REDIRECT_TO_API_FOR_GET_TOKEN",
-                E = "LOGIN_BY_TOKEN",
-                b = "LOGOUT_BY_TOKEN";
+                b = "LOGIN_BY_TOKEN",
+                E = "LOGOUT_BY_TOKEN";
             function h(e, t) {
                 var n = Object.keys(e);
                 if (Object.getOwnPropertySymbols) {
@@ -41,7 +41,7 @@
                 }
                 return n;
             }
-            function O(e) {
+            function v(e) {
                 for (var t = 1; t < arguments.length; t++) {
                     var n = null != arguments[t] ? arguments[t] : {};
                     t % 2
@@ -56,41 +56,41 @@
                 }
                 return e;
             }
-            var v,
+            var O,
                 j = { idMember: "", token: "", key: "" },
                 x = function() {
                     var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : j,
                         t = arguments.length > 1 ? arguments[1] : void 0;
                     switch (t.type) {
-                        case E:
-                            return O({}, e, { token: t.token });
+                        case b:
+                            return v({}, e, { token: t.token });
                         case "LOGIN_BY_TOKEN_SUCCESS":
-                            return O({}, e, { idMember: t.idMember });
+                            return v({}, e, { idMember: t.idMember });
                         default:
                             return e;
                     }
                 },
                 S = n(8),
                 g = n(25),
-                _ = n(24),
-                L = n(26),
-                C = n(17),
-                w = "LOAD_BOARDS";
+                L = n(24),
+                _ = n(26),
+                w = n(17),
+                k = "LOAD_BOARDS";
             !(function(e) {
                 (e[(e.isNotLoaded = 0)] = "isNotLoaded"),
                     (e[(e.isLoading = 1)] = "isLoading"),
                     (e[(e.isLoaded = 2)] = "isLoaded"),
                     (e[(e.isError = 3)] = "isError");
-            })(v || (v = {}));
-            var k,
-                D = { boardsLoadingState: v.isNotLoaded, collection: Object(C.a)([]) },
+            })(O || (O = {}));
+            var C,
+                D = { boardsLoadingState: O.isNotLoaded, collection: Object(w.a)([]) },
                 I = (function(e) {
                     function t() {
-                        return Object(S.a)(this, t), Object(g.a)(this, Object(_.a)(t).apply(this, arguments));
+                        return Object(S.a)(this, t), Object(g.a)(this, Object(L.a)(t).apply(this, arguments));
                     }
-                    return Object(L.a)(t, e), t;
-                })(Object(C.b)(D)),
-                A = function() {
+                    return Object(_.a)(t, e), t;
+                })(Object(w.b)(D)),
+                B = function() {
                     var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : new I(),
                         t = arguments.length > 1 ? arguments[1] : void 0;
                     switch (t.type) {
@@ -99,28 +99,28 @@
                                 t.boards.forEach(function(t) {
                                     e = e.setIn(["collection", t.id], t);
                                 }),
-                                e.set("boardsLoadingState", v.isLoaded)
+                                e.set("boardsLoadingState", O.isLoaded)
                             );
                         case "LOAD_BOARDS_ERROR":
-                            return e.set("boardsLoadingState", v.isError);
+                            return e.set("boardsLoadingState", O.isError);
                         case "SET_CARDS_LOADED":
                             return e.updateIn(["collection", t.id], function(e) {
-                                return e && e.set("cardsLoadingState", v.isLoaded);
+                                return e && e.set("cardsLoadingState", O.isLoaded);
                             });
                         case "LOAD_CARDS_FOR_BOARD_ERROR":
                             return e.updateIn(["collection", t.id], function(e) {
-                                return e && e.set("cardsLoadingState", v.isError);
+                                return e && e.set("cardsLoadingState", O.isError);
                             });
                         default:
                             return e;
                     }
                 },
-                N = "CREATE_LIST",
-                B = "UPDATE_LIST",
+                y = "CREATE_LIST",
+                N = "UPDATE_LIST",
                 T = "DELETE_LIST",
-                y = "SORT_LIST",
+                A = "SORT_LIST",
                 R = function() {
-                    var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : Object(C.a)([]),
+                    var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : Object(w.a)([]),
                         t = arguments.length > 1 ? arguments[1] : void 0;
                     switch (t.type) {
                         case "ADD_LISTS":
@@ -146,11 +146,11 @@
                 },
                 P = "LOAD_CARDS_FOR_BOARD",
                 M = "CREATE_CARD",
-                U = "UPDATE_CARD",
-                F = "DELETE_CARD",
-                Y = "SORT_CARD",
-                z = function() {
-                    var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : Object(C.a)([]),
+                F = "UPDATE_CARD",
+                U = "DELETE_CARD",
+                z = "SORT_CARD",
+                q = function() {
+                    var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : Object(w.a)([]),
                         t = arguments.length > 1 ? arguments[1] : void 0;
                     switch (t.type) {
                         case "ADD_CARDS":
@@ -176,17 +176,17 @@
                 };
             !(function(e) {
                 (e[(e.viewing = 0)] = "viewing"), (e[(e.editing = 1)] = "editing");
-            })(k || (k = {}));
-            var q = { id: "", idList: "", name: "", pos: 0, mode: k.viewing },
-                H = (function(e) {
+            })(C || (C = {}));
+            var H = { id: "", idList: "", name: "", pos: 0, mode: C.viewing },
+                Y = (function(e) {
                     function t() {
-                        return Object(S.a)(this, t), Object(g.a)(this, Object(_.a)(t).apply(this, arguments));
+                        return Object(S.a)(this, t), Object(g.a)(this, Object(L.a)(t).apply(this, arguments));
                     }
-                    return Object(L.a)(t, e), t;
-                })(Object(C.b)(q)),
-                K = new H(),
-                G = function() {
-                    var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : K,
+                    return Object(_.a)(t, e), t;
+                })(Object(w.b)(H)),
+                G = new Y(),
+                J = function() {
+                    var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : G,
                         t = arguments.length > 1 ? arguments[1] : void 0;
                     switch (t.type) {
                         case "SET_ID_LIST":
@@ -194,54 +194,51 @@
                         case "SET_NAME":
                             return e.set("name", t.name);
                         case "DELETE_CREATE_CARD":
-                            return K;
+                            return G;
                         default:
                             return e;
                     }
                 },
-                J = function(e) {
+                K = function(e) {
                     return Object(i.c)({
-                        router: Object(d.b)(e),
+                        router: Object(l.b)(e),
                         auth: x,
-                        boards: A,
+                        boards: B,
                         lists: R,
-                        cards: z,
-                        createCard: G
+                        cards: q,
+                        createCard: J
                     });
                 },
-                V = n(4),
-                W = n.n(V),
+                W = n(4),
+                V = n.n(W),
                 X = n(68),
                 $ = n(2),
                 Q = function() {
                     return { type: p };
                 },
                 Z = function(e) {
-                    return { type: E, token: e };
+                    return { type: b, token: e };
                 },
                 ee = function(e) {
                     return { type: "LOGIN_BY_TOKEN_SUCCESS", idMember: e };
                 },
                 te = function(e) {
-                    return { type: b, token: e };
+                    return { type: E, token: e };
                 },
                 ne = n(9),
                 re = function() {
-                    Object({ NODE_ENV: "production", PUBLIC_URL: "/trello/build" }).REACT_APP_API_KEY
-                        ? (document.location.href =
-                              "https://trello.com/1/authorize?scope=write&expiration=1day&name=TestTrello&return_url=http://localhost:3000/auth/save_token/&scope=read&response_type=token&key=" +
-                              Object({ NODE_ENV: "production", PUBLIC_URL: "/trello/build" }).REACT_APP_API_KEY)
-                        : console.error("Not specified env.REACT_APP_API_KEY");
+                    document.location.href =
+                        "https://trello.com/1/authorize?scope=write&expiration=1day&name=TestTrello&return_url=https://isvk.github.io/trello/build/auth/save_token/&scope=read&response_type=token&key=57dec6bd85b077473d5258dd1f499f7b";
                 },
                 ae = function(e) {
                     return Object(ne.d)("/board/" + e);
                 },
-                ce = W.a.mark(se),
-                oe = W.a.mark(le),
-                ie = W.a.mark(de),
-                ue = W.a.mark(me);
-            function se() {
-                return W.a.wrap(
+                ce = V.a.mark(ue),
+                oe = V.a.mark(de),
+                ie = V.a.mark(le),
+                se = V.a.mark(me);
+            function ue() {
+                return V.a.wrap(
                     function(e) {
                         for (;;)
                             switch ((e.prev = e.next)) {
@@ -262,9 +259,9 @@
                     [[0, 5]]
                 );
             }
-            function le(e, t) {
+            function de(e, t) {
                 var n;
-                return W.a.wrap(
+                return V.a.wrap(
                     function(r) {
                         for (;;)
                             switch ((r.prev = r.next)) {
@@ -299,8 +296,8 @@
                     [[0, 12]]
                 );
             }
-            function de(e, t) {
-                return W.a.wrap(
+            function le(e, t) {
+                return V.a.wrap(
                     function(n) {
                         for (;;)
                             switch ((n.prev = n.next)) {
@@ -342,70 +339,70 @@
                 );
             }
             function me(e) {
-                return W.a.wrap(function(t) {
+                return V.a.wrap(function(t) {
                     for (;;)
                         switch ((t.prev = t.next)) {
                             case 0:
-                                return (t.next = 2), Object($.e)(p, se);
+                                return (t.next = 2), Object($.e)(p, ue);
                             case 2:
-                                return (t.next = 4), Object($.e)(E, le, e);
+                                return (t.next = 4), Object($.e)(b, de, e);
                             case 4:
-                                return (t.next = 6), Object($.e)(b, de, e);
+                                return (t.next = 6), Object($.e)(E, le, e);
                             case 6:
                             case "end":
                                 return t.stop();
                         }
-                }, ue);
+                }, se);
             }
             var fe = function() {
-                    return { type: w };
+                    return { type: k };
                 },
                 pe = function() {
                     return { type: "LOAD_BOARDS_ERROR" };
                 },
-                Ee = function(e) {
+                be = function(e) {
                     return { type: "ADD_BOARDS", boards: e };
                 },
-                be = function(e) {
+                Ee = function(e) {
                     return { type: "SET_CARDS_LOADED", id: e };
                 },
                 he = function(e) {
                     return { type: "LOAD_CARDS_FOR_BOARD_ERROR", id: e };
                 },
-                Oe = { id: "", name: "", cardsLoadingState: v.isNotLoaded },
-                ve = (function(e) {
+                ve = { id: "", name: "", cardsLoadingState: O.isNotLoaded },
+                Oe = (function(e) {
                     function t() {
-                        return Object(S.a)(this, t), Object(g.a)(this, Object(_.a)(t).apply(this, arguments));
+                        return Object(S.a)(this, t), Object(g.a)(this, Object(L.a)(t).apply(this, arguments));
                     }
-                    return Object(L.a)(t, e), t;
-                })(Object(C.b)(Oe)),
-                je = { id: "", idBoard: "", name: "", pos: 0, mode: k.viewing },
+                    return Object(_.a)(t, e), t;
+                })(Object(w.b)(ve)),
+                je = { id: "", idBoard: "", name: "", pos: 0, mode: C.viewing },
                 xe = (function(e) {
                     function t() {
-                        return Object(S.a)(this, t), Object(g.a)(this, Object(_.a)(t).apply(this, arguments));
+                        return Object(S.a)(this, t), Object(g.a)(this, Object(L.a)(t).apply(this, arguments));
                     }
-                    return Object(L.a)(t, e), t;
-                })(Object(C.b)(je)),
+                    return Object(_.a)(t, e), t;
+                })(Object(w.b)(je)),
                 Se = function(e) {
                     return { type: "ADD_LISTS", lists: e };
                 },
                 ge = function(e) {
                     return { type: "UPDATE_LIST_SUCCESS", list: e };
                 },
-                _e = function(e) {
+                Le = function(e) {
                     return { type: "DELETE_LIST_SUCCESS", id: e };
                 },
-                Le = function() {
+                _e = function() {
                     return { type: "SORT_BY_POSITION" };
                 },
-                Ce = function(e, t, n, r) {
-                    return { type: y, id: e, idBoard: t, newIndex: n, oldIndex: r };
+                we = function(e, t, n, r) {
+                    return { type: A, id: e, idBoard: t, newIndex: n, oldIndex: r };
                 },
-                we = W.a.mark(De),
-                ke = W.a.mark(Ie);
+                ke = V.a.mark(De),
+                Ce = V.a.mark(Ie);
             function De(e) {
                 var t;
-                return W.a.wrap(
+                return V.a.wrap(
                     function(n) {
                         for (;;)
                             switch ((n.prev = n.next)) {
@@ -423,9 +420,9 @@
                                         (t = n.sent),
                                         (n.next = 6),
                                         Object($.c)(
-                                            Ee(
+                                            be(
                                                 t.map(function(e) {
-                                                    return new ve(e);
+                                                    return new Oe(e);
                                                 })
                                             )
                                         )
@@ -456,96 +453,96 @@
                                     return n.stop();
                             }
                     },
-                    we,
+                    ke,
                     null,
                     [[0, 10]]
                 );
             }
             function Ie(e) {
-                return W.a.wrap(function(t) {
+                return V.a.wrap(function(t) {
                     for (;;)
                         switch ((t.prev = t.next)) {
                             case 0:
-                                return (t.next = 2), Object($.e)(w, De, e);
+                                return (t.next = 2), Object($.e)(k, De, e);
                             case 2:
                             case "end":
                                 return t.stop();
                         }
-                }, ke);
+                }, Ce);
             }
-            var Ae = n(18),
-                Ne = function(e, t) {
+            var Be = n(18),
+                ye = function(e, t) {
                     return t;
                 },
-                Be = function(e) {
+                Ne = function(e) {
                     return e.auth;
                 },
                 Te =
-                    (Object(Ae.a)(Be, function(e) {
+                    (Object(Be.a)(Ne, function(e) {
                         return e.idMember;
                     }),
-                    Object(Ae.a)(Be, function(e) {
+                    Object(Be.a)(Ne, function(e) {
                         return e.token;
                     }),
-                    Object(Ae.a)(Be, function(e) {
+                    Object(Be.a)(Ne, function(e) {
                         return e.key;
                     }),
                     function(e) {
                         return e.boards;
                     }),
-                ye = Object(Ae.a)(Te, function(e) {
+                Ae = Object(Be.a)(Te, function(e) {
                     return e.boardsLoadingState;
                 }),
-                Re = Object(Ae.a)(Te, function(e) {
+                Re = Object(Be.a)(Te, function(e) {
                     return e.collection;
                 }),
-                Pe = Object(Ae.a)(Re, Ne, function(e, t) {
+                Pe = Object(Be.a)(Re, ye, function(e, t) {
                     return e.get(t);
                 }),
                 Me = function(e) {
                     return e.lists;
                 },
-                Ue = Object(Ae.a)(Me, Ne, function(e, t) {
+                Fe = Object(Be.a)(Me, ye, function(e, t) {
                     return e.filter(function(e) {
                         return e.idBoard === t;
                     });
                 }),
-                Fe = Object(Ae.a)(Me, Ne, function(e, t) {
+                Ue = Object(Be.a)(Me, ye, function(e, t) {
+                    return e.find(function(e) {
+                        return e.id === t;
+                    });
+                }),
+                ze = function(e) {
+                    return e.cards;
+                },
+                qe = Object(Be.a)(ze, ye, function(e, t) {
+                    return e.filter(function(e) {
+                        return e.idList === t;
+                    });
+                }),
+                He = Object(Be.a)(ze, ye, function(e, t) {
                     return e.find(function(e) {
                         return e.id === t;
                     });
                 }),
                 Ye = function(e) {
-                    return e.cards;
-                },
-                ze = Object(Ae.a)(Ye, Ne, function(e, t) {
-                    return e.filter(function(e) {
-                        return e.idList === t;
-                    });
-                }),
-                qe = Object(Ae.a)(Ye, Ne, function(e, t) {
-                    return e.find(function(e) {
-                        return e.id === t;
-                    });
-                }),
-                He = function(e) {
                     return e.createCard;
                 },
-                Ke = Object(Ae.a)(He, function(e) {
+                Ge = Object(Be.a)(Ye, function(e) {
                     return e.idList;
                 }),
-                Ge =
-                    (Object(Ae.a)(He, function(e) {
+                Je =
+                    (Object(Be.a)(Ye, function(e) {
                         return e.name;
                     }),
-                    W.a.mark($e)),
-                Je = W.a.mark(Qe),
-                Ve = W.a.mark(Ze),
-                We = W.a.mark(et),
-                Xe = W.a.mark(tt);
+                    V.a.mark($e)),
+                Ke = V.a.mark(Qe),
+                We = V.a.mark(Ze),
+                Ve = V.a.mark(et),
+                Xe = V.a.mark(tt);
             function $e(e, t) {
                 var n;
-                return W.a.wrap(
+                return V.a.wrap(
                     function(r) {
                         for (;;)
                             switch ((r.prev = r.next)) {
@@ -567,14 +564,14 @@
                                     return r.stop();
                             }
                     },
-                    Ge,
+                    Je,
                     null,
                     [[0, 8]]
                 );
             }
             function Qe(e, t) {
                 var n;
-                return W.a.wrap(
+                return V.a.wrap(
                     function(r) {
                         for (;;)
                             switch ((r.prev = r.next)) {
@@ -587,7 +584,7 @@
                                 case 3:
                                     return (n = r.sent), (r.next = 6), Object($.c)(ge(new xe(n)));
                                 case 6:
-                                    return (r.next = 8), Object($.c)(Le());
+                                    return (r.next = 8), Object($.c)(_e());
                                 case 8:
                                     r.next = 13;
                                     break;
@@ -598,20 +595,20 @@
                                     return r.stop();
                             }
                     },
-                    Je,
+                    Ke,
                     null,
                     [[0, 10]]
                 );
             }
             function Ze(e, t) {
-                return W.a.wrap(
+                return V.a.wrap(
                     function(n) {
                         for (;;)
                             switch ((n.prev = n.next)) {
                                 case 0:
                                     return (n.prev = 0), (n.next = 3), Object($.b)(e.container.ApiList.delete, t.id);
                                 case 3:
-                                    return (n.next = 5), Object($.c)(_e(t.id));
+                                    return (n.next = 5), Object($.c)(Le(t.id));
                                 case 5:
                                     n.next = 10;
                                     break;
@@ -622,38 +619,38 @@
                                     return n.stop();
                             }
                     },
-                    Ve,
+                    We,
                     null,
                     [[0, 7]]
                 );
             }
             function et(e, t) {
-                var n, r, a, c, o, i, u, s;
-                return W.a.wrap(
-                    function(l) {
+                var n, r, a, c, o, i, s, u;
+                return V.a.wrap(
+                    function(d) {
                         for (;;)
-                            switch ((l.prev = l.next)) {
+                            switch ((d.prev = d.next)) {
                                 case 0:
                                     return (
-                                        (l.prev = 0),
+                                        (d.prev = 0),
                                         (n = function(e, t) {
                                             var n = e.skip(t).first();
                                             return n ? n.pos : 0;
                                         }),
-                                        (l.next = 4),
-                                        Object($.d)(Fe, t.id)
+                                        (d.next = 4),
+                                        Object($.d)(Ue, t.id)
                                     );
                                 case 4:
-                                    if ((r = l.sent)) {
-                                        l.next = 7;
+                                    if ((r = d.sent)) {
+                                        d.next = 7;
                                         break;
                                     }
                                     throw new Error("Error not found list");
                                 case 7:
-                                    return (l.next = 9), Object($.d)(Ue, t.idBoard);
+                                    return (d.next = 9), Object($.d)(Fe, t.idBoard);
                                 case 9:
                                     return (
-                                        (a = l.sent),
+                                        (a = d.sent),
                                         (c = 0),
                                         0 === t.newIndex
                                             ? (c = n(a, 0) / 2)
@@ -662,49 +659,49 @@
                                             : ((o = 0),
                                               t.newIndex > t.oldIndex && (o = 1),
                                               (i = n(a, t.newIndex - 1 + o)),
-                                              (u = n(a, t.newIndex + o)),
-                                              (c = (i + u) / 2)),
+                                              (s = n(a, t.newIndex + o)),
+                                              (c = (i + s) / 2)),
                                         (r = r.merge({ pos: c })),
-                                        (l.next = 15),
+                                        (d.next = 15),
                                         Object($.c)(Se([r]))
                                     );
                                 case 15:
-                                    return (l.next = 17), Object($.c)(Le());
+                                    return (d.next = 17), Object($.c)(_e());
                                 case 17:
-                                    return (l.next = 19), Object($.b)(e.container.ApiList.update, t.id, r.toJS());
+                                    return (d.next = 19), Object($.b)(e.container.ApiList.update, t.id, r.toJS());
                                 case 19:
-                                    if (((s = l.sent), r.pos === s.pos)) {
-                                        l.next = 23;
+                                    if (((u = d.sent), r.pos === u.pos)) {
+                                        d.next = 23;
                                         break;
                                     }
-                                    return (l.next = 23), Object($.c)(fe());
+                                    return (d.next = 23), Object($.c)(fe());
                                 case 23:
-                                    l.next = 28;
+                                    d.next = 28;
                                     break;
                                 case 25:
-                                    (l.prev = 25), (l.t0 = l.catch(0)), console.error(l.t0);
+                                    (d.prev = 25), (d.t0 = d.catch(0)), console.error(d.t0);
                                 case 28:
                                 case "end":
-                                    return l.stop();
+                                    return d.stop();
                             }
                     },
-                    We,
+                    Ve,
                     null,
                     [[0, 25]]
                 );
             }
             function tt(e) {
-                return W.a.wrap(function(t) {
+                return V.a.wrap(function(t) {
                     for (;;)
                         switch ((t.prev = t.next)) {
                             case 0:
-                                return (t.next = 2), Object($.e)(N, $e, e);
+                                return (t.next = 2), Object($.e)(y, $e, e);
                             case 2:
-                                return (t.next = 4), Object($.e)(B, Qe, e);
+                                return (t.next = 4), Object($.e)(N, Qe, e);
                             case 4:
                                 return (t.next = 6), Object($.e)(T, Ze, e);
                             case 6:
-                                return (t.next = 8), Object($.e)(y, et, e);
+                                return (t.next = 8), Object($.e)(A, et, e);
                             case 8:
                             case "end":
                                 return t.stop();
@@ -724,22 +721,22 @@
                     return { type: "SET_MODE", id: e, mode: t };
                 },
                 ot = function(e, t) {
-                    return { type: U, id: e, card: t };
+                    return { type: F, id: e, card: t };
                 },
                 it = function(e) {
                     return { type: "UPDATE_CARD_SUCCESS", card: e };
                 },
-                ut = function(e) {
-                    return { type: F, id: e };
-                },
                 st = function(e) {
+                    return { type: U, id: e };
+                },
+                ut = function(e) {
                     return { type: "DELETE_CARD_SUCCESS", id: e };
                 },
-                lt = function() {
+                dt = function() {
                     return { type: "SORT_BY_POSITION" };
                 },
-                dt = function(e, t, n, r, a) {
-                    return { type: Y, id: e, idList: t, idBoard: n, newIndex: r, oldIndex: a };
+                lt = function(e, t, n, r, a) {
+                    return { type: z, id: e, idList: t, idBoard: n, newIndex: r, oldIndex: a };
                 },
                 mt = function(e) {
                     return { type: "SET_NAME", name: e };
@@ -750,15 +747,15 @@
                 pt = function() {
                     return { type: "DELETE_CREATE_CARD" };
                 },
-                Et = W.a.mark(xt),
-                bt = W.a.mark(St),
-                ht = W.a.mark(gt),
-                Ot = W.a.mark(_t),
-                vt = W.a.mark(Lt),
-                jt = W.a.mark(Ct);
+                bt = V.a.mark(xt),
+                Et = V.a.mark(St),
+                ht = V.a.mark(gt),
+                vt = V.a.mark(Lt),
+                Ot = V.a.mark(_t),
+                jt = V.a.mark(wt);
             function xt(e, t) {
                 var n;
-                return W.a.wrap(
+                return V.a.wrap(
                     function(r) {
                         for (;;)
                             switch ((r.prev = r.next)) {
@@ -775,15 +772,15 @@
                                         Object($.c)(
                                             nt(
                                                 n.map(function(e) {
-                                                    return new H(e);
+                                                    return new Y(e);
                                                 })
                                             )
                                         )
                                     );
                                 case 6:
-                                    return (r.next = 8), Object($.c)(lt());
+                                    return (r.next = 8), Object($.c)(dt());
                                 case 8:
-                                    return (r.next = 10), Object($.c)(be(t.idBoard));
+                                    return (r.next = 10), Object($.c)(Ee(t.idBoard));
                                 case 10:
                                     r.next = 16;
                                     break;
@@ -796,14 +793,14 @@
                                     return r.stop();
                             }
                     },
-                    Et,
+                    bt,
                     null,
                     [[0, 12]]
                 );
             }
             function St(e, t) {
                 var n;
-                return W.a.wrap(
+                return V.a.wrap(
                     function(r) {
                         for (;;)
                             switch ((r.prev = r.next)) {
@@ -814,7 +811,7 @@
                                         Object($.b)(e.container.ApiCard.create, t.idList, t.name)
                                     );
                                 case 3:
-                                    return (n = r.sent), (r.next = 6), Object($.c)(nt([new H(n)]));
+                                    return (n = r.sent), (r.next = 6), Object($.c)(nt([new Y(n)]));
                                 case 6:
                                     return (r.next = 8), Object($.c)(pt());
                                 case 8:
@@ -827,14 +824,14 @@
                                     return r.stop();
                             }
                     },
-                    bt,
+                    Et,
                     null,
                     [[0, 10]]
                 );
             }
             function gt(e, t) {
                 var n;
-                return W.a.wrap(
+                return V.a.wrap(
                     function(r) {
                         for (;;)
                             switch ((r.prev = r.next)) {
@@ -845,9 +842,9 @@
                                         Object($.b)(e.container.ApiCard.update, t.id, t.card.toJS())
                                     );
                                 case 3:
-                                    return (n = r.sent), (r.next = 6), Object($.c)(it(new H(n)));
+                                    return (n = r.sent), (r.next = 6), Object($.c)(it(new Y(n)));
                                 case 6:
-                                    return (r.next = 8), Object($.c)(lt());
+                                    return (r.next = 8), Object($.c)(dt());
                                 case 8:
                                     r.next = 13;
                                     break;
@@ -863,15 +860,15 @@
                     [[0, 10]]
                 );
             }
-            function _t(e, t) {
-                return W.a.wrap(
+            function Lt(e, t) {
+                return V.a.wrap(
                     function(n) {
                         for (;;)
                             switch ((n.prev = n.next)) {
                                 case 0:
                                     return (n.prev = 0), (n.next = 3), Object($.b)(e.container.ApiCard.delete, t.id);
                                 case 3:
-                                    return (n.next = 5), Object($.c)(st(t.id));
+                                    return (n.next = 5), Object($.c)(ut(t.id));
                                 case 5:
                                     n.next = 10;
                                     break;
@@ -882,38 +879,38 @@
                                     return n.stop();
                             }
                     },
-                    Ot,
+                    vt,
                     null,
                     [[0, 7]]
                 );
             }
-            function Lt(e, t) {
-                var n, r, a, c, o, i, u, s, l;
-                return W.a.wrap(
-                    function(d) {
+            function _t(e, t) {
+                var n, r, a, c, o, i, s, u, d;
+                return V.a.wrap(
+                    function(l) {
                         for (;;)
-                            switch ((d.prev = d.next)) {
+                            switch ((l.prev = l.next)) {
                                 case 0:
                                     return (
-                                        (d.prev = 0),
+                                        (l.prev = 0),
                                         (n = function(e, t) {
                                             var n = e.skip(t).first();
                                             return n ? n.pos : 0;
                                         }),
-                                        (d.next = 4),
-                                        Object($.d)(qe, t.id)
+                                        (l.next = 4),
+                                        Object($.d)(He, t.id)
                                     );
                                 case 4:
-                                    if ((r = d.sent)) {
-                                        d.next = 7;
+                                    if ((r = l.sent)) {
+                                        l.next = 7;
                                         break;
                                     }
                                     throw new Error("Error not found card");
                                 case 7:
-                                    return (d.next = 9), Object($.d)(ze, t.idList);
+                                    return (l.next = 9), Object($.d)(qe, t.idList);
                                 case 9:
                                     return (
-                                        (a = d.sent),
+                                        (a = l.sent),
                                         (c = 0),
                                         (o = 0),
                                         t.idList !== r.idList && (o = 1),
@@ -923,40 +920,40 @@
                                             ? (c = 2 * n(a, t.newIndex - o))
                                             : ((i = 0),
                                               t.newIndex > t.oldIndex && t.idList === r.idList && (i = 1),
-                                              (u = n(a, t.newIndex - 1 + i)),
-                                              (s = n(a, t.newIndex + i)),
-                                              (c = (u + s) / 2)),
+                                              (s = n(a, t.newIndex - 1 + i)),
+                                              (u = n(a, t.newIndex + i)),
+                                              (c = (s + u) / 2)),
                                         (r = r.merge({ idList: t.idList, pos: c })),
-                                        (d.next = 17),
+                                        (l.next = 17),
                                         Object($.c)(nt([r]))
                                     );
                                 case 17:
-                                    return (d.next = 19), Object($.c)(lt());
+                                    return (l.next = 19), Object($.c)(dt());
                                 case 19:
-                                    return (d.next = 21), Object($.b)(e.container.ApiCard.update, t.id, r.toJS());
+                                    return (l.next = 21), Object($.b)(e.container.ApiCard.update, t.id, r.toJS());
                                 case 21:
-                                    if (((l = d.sent), r.pos === l.pos)) {
-                                        d.next = 25;
+                                    if (((d = l.sent), r.pos === d.pos)) {
+                                        l.next = 25;
                                         break;
                                     }
-                                    return (d.next = 25), Object($.c)(rt(t.idBoard));
+                                    return (l.next = 25), Object($.c)(rt(t.idBoard));
                                 case 25:
-                                    d.next = 30;
+                                    l.next = 30;
                                     break;
                                 case 27:
-                                    (d.prev = 27), (d.t0 = d.catch(0)), console.error(d.t0);
+                                    (l.prev = 27), (l.t0 = l.catch(0)), console.error(l.t0);
                                 case 30:
                                 case "end":
-                                    return d.stop();
+                                    return l.stop();
                             }
                     },
-                    vt,
+                    Ot,
                     null,
                     [[0, 27]]
                 );
             }
-            function Ct(e) {
-                return W.a.wrap(function(t) {
+            function wt(e) {
+                return V.a.wrap(function(t) {
                     for (;;)
                         switch ((t.prev = t.next)) {
                             case 0:
@@ -964,21 +961,21 @@
                             case 2:
                                 return (t.next = 4), Object($.e)(M, St, e);
                             case 4:
-                                return (t.next = 6), Object($.e)(U, gt, e);
+                                return (t.next = 6), Object($.e)(F, gt, e);
                             case 6:
-                                return (t.next = 8), Object($.e)(F, _t, e);
+                                return (t.next = 8), Object($.e)(U, Lt, e);
                             case 8:
-                                return (t.next = 10), Object($.e)(Y, Lt, e);
+                                return (t.next = 10), Object($.e)(z, _t, e);
                             case 10:
                             case "end":
                                 return t.stop();
                         }
                 }, jt);
             }
-            var wt = n(69),
-                kt = new (n.n(wt).a)(),
-                Dt = kt;
-            kt.service("Http", function e() {
+            var kt = n(69),
+                Ct = new (n.n(kt).a)(),
+                Dt = Ct;
+            Ct.service("Http", function e() {
                 var t = this;
                 Object(S.a)(this, e),
                     (this.get = function(e, n) {
@@ -997,11 +994,7 @@
                         var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                         n.idMember || (n.idMember = localStorage.getItem("idMember")),
                             n.token || (n.token = localStorage.getItem("token")),
-                            n.key ||
-                                (n.key = Object({
-                                    NODE_ENV: "production",
-                                    PUBLIC_URL: "/trello/build"
-                                }).REACT_APP_API_KEY);
+                            n.key || (n.key = Object({ NODE_ENV: "production", PUBLIC_URL: "" }).REACT_APP_API_KEY);
                         var r = Object.keys(n)
                             .map(function(e) {
                                 return e + "=" + n[e];
@@ -1012,7 +1005,7 @@
                         });
                     });
             }),
-                kt.service(
+                Ct.service(
                     "ApiAuth",
                     function e(t) {
                         var n = this;
@@ -1032,7 +1025,7 @@
                     },
                     "Http"
                 ),
-                kt.service(
+                Ct.service(
                     "ApiBoard",
                     function e(t) {
                         var n = this;
@@ -1045,7 +1038,7 @@
                     },
                     "Http"
                 ),
-                kt.service(
+                Ct.service(
                     "ApiList",
                     function e(t) {
                         var n = this;
@@ -1064,7 +1057,7 @@
                     },
                     "Http"
                 ),
-                kt.service(
+                Ct.service(
                     "ApiCard",
                     function e(t) {
                         var n = this;
@@ -1092,13 +1085,13 @@
                     window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/)
             );
             var It = n(70),
-                At = n(10);
+                Bt = n(10);
             n(92);
-            function Nt() {
-                return Object(u.d)();
+            function yt() {
+                return Object(s.d)();
             }
-            function Bt() {
-                var e = Nt();
+            function Nt() {
+                var e = yt();
                 return a.a.createElement(
                     "a",
                     {
@@ -1166,7 +1159,7 @@
                                 "li",
                                 null,
                                 "\u041f\u043e\u0441\u043b\u0435 \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u0430\u0446\u0438\u0438 \u043f\u0435\u0440\u0435\u0439\u0434\u0438\u0442\u0435 \u0434\u043b\u044f ",
-                                a.a.createElement(Bt, null)
+                                a.a.createElement(Nt, null)
                             ),
                             a.a.createElement(
                                 "li",
@@ -1178,7 +1171,7 @@
                 );
             }
             n(93);
-            function yt() {
+            function At() {
                 var e = document.getElementById("preloader-root");
                 return e
                     ? o.a.createPortal(
@@ -1205,8 +1198,8 @@
                     : a.a.createElement(a.a.Fragment, null);
             }
             function Rt() {
-                var e = Nt(),
-                    t = Object(At.f)().hash.replace("#token=", "");
+                var e = yt(),
+                    t = Object(Bt.f)().hash.replace("#token=", "");
                 return (
                     Object(r.useEffect)(
                         function() {
@@ -1214,16 +1207,16 @@
                         },
                         [e, t]
                     ),
-                    a.a.createElement(yt, null)
+                    a.a.createElement(At, null)
                 );
             }
             function Pt(e, t) {
-                return Object(u.e)(function(n) {
+                return Object(s.e)(function(n) {
                     return e(n, t);
                 });
             }
             function Mt() {
-                var e = Nt(),
+                var e = yt(),
                     t = Pt(Te);
                 switch (
                     (Object(r.useEffect)(
@@ -1234,20 +1227,20 @@
                     ),
                     t.boardsLoadingState)
                 ) {
-                    case v.isNotLoaded:
-                    case v.isLoading:
-                        return a.a.createElement(yt, null);
-                    case v.isError:
+                    case O.isNotLoaded:
+                    case O.isLoading:
+                        return a.a.createElement(At, null);
+                    case O.isError:
                         return a.a.createElement("h1", null, "Error loading boards");
                 }
                 return a.a.createElement(a.a.Fragment, null);
             }
-            var Ut = n(41),
-                Ft = n(153),
-                Yt = n(152);
+            var Ft = n(41),
+                Ut = n(153),
+                zt = n(152);
             n(94), n(95);
-            function zt() {
-                var e = Nt(),
+            function qt() {
+                var e = yt(),
                     t = localStorage.getItem("token") || "";
                 return a.a.createElement(
                     "button",
@@ -1260,7 +1253,7 @@
                     "\u0412\u044b\u0445\u043e\u0434"
                 );
             }
-            function qt(e) {
+            function Ht(e) {
                 return a.a.createElement(
                     "div",
                     { className: "pageListBoards" },
@@ -1268,11 +1261,11 @@
                         "div",
                         { className: "head" },
                         a.a.createElement(
-                            Ut.a,
+                            Ft.a,
                             { to: "/", className: "linkHome" },
-                            a.a.createElement(Yt.a, { size: "20", className: "iconHome" })
+                            a.a.createElement(zt.a, { size: "20", className: "iconHome" })
                         ),
-                        a.a.createElement(zt, null)
+                        a.a.createElement(qt, null)
                     ),
                     a.a.createElement(
                         "div",
@@ -1283,7 +1276,7 @@
                             a.a.createElement(
                                 "h1",
                                 { className: "title" },
-                                a.a.createElement(Ft.a, { size: "18", className: "icon" }),
+                                a.a.createElement(Ut.a, { size: "18", className: "icon" }),
                                 "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0434\u043e\u0441\u043a\u0443"
                             ),
                             a.a.createElement(
@@ -1294,7 +1287,7 @@
                                         "li",
                                         { key: e.id },
                                         a.a.createElement(
-                                            Ut.a,
+                                            Ft.a,
                                             { to: "/board/" + e.id, className: "linkBoard" },
                                             e.name
                                         )
@@ -1305,14 +1298,14 @@
                     )
                 );
             }
-            function Ht() {
+            function Yt() {
                 var e = Pt(Te);
-                return e.boardsLoadingState === v.isNotLoaded
+                return e.boardsLoadingState === O.isNotLoaded
                     ? a.a.createElement(Mt, null)
-                    : a.a.createElement(qt, { boards: e });
+                    : a.a.createElement(Ht, { boards: e });
             }
-            function Kt(e) {
-                var t = Nt();
+            function Gt(e) {
+                var t = yt();
                 switch (
                     (Object(r.useEffect)(
                         function() {
@@ -1322,29 +1315,29 @@
                     ),
                     e.board.cardsLoadingState)
                 ) {
-                    case v.isNotLoaded:
-                    case v.isLoading:
-                        return a.a.createElement(yt, null);
-                    case v.isError:
+                    case O.isNotLoaded:
+                    case O.isLoading:
+                        return a.a.createElement(At, null);
+                    case O.isError:
                         return a.a.createElement("h1", null, "Error loading cards");
                 }
                 return a.a.createElement(a.a.Fragment, null);
             }
-            var Gt = n(28),
-                Jt = n(75);
+            var Jt = n(28),
+                Kt = n(75);
             n(97);
-            function Vt(e) {
+            function Wt(e) {
                 return a.a.createElement(
                     "button",
                     { className: "editCardButton", onClick: e.handleSetModeEditing },
-                    a.a.createElement(Jt.a, { size: "14" })
+                    a.a.createElement(Kt.a, { size: "14" })
                 );
             }
-            function Wt(e) {
-                var t = Nt();
-                return a.a.createElement(Vt, {
+            function Vt(e) {
+                var t = yt();
+                return a.a.createElement(Wt, {
                     handleSetModeEditing: function() {
-                        return t(ct(e.idCard, k.editing));
+                        return t(ct(e.idCard, C.editing));
                     }
                 });
             }
@@ -1415,7 +1408,7 @@
                 );
             }
             function en(e) {
-                var t = Nt(),
+                var t = yt(),
                     n = Object(r.useState)(),
                     c = Object(Xt.a)(n, 2),
                     o = c[0],
@@ -1429,7 +1422,7 @@
                         i(!0);
                     },
                     handleConfirmationDelete: function() {
-                        t(ut(e.idCard)), i(!1);
+                        t(st(e.idCard)), i(!1);
                     }
                 });
             }
@@ -1441,7 +1434,7 @@
                     a.a.createElement(
                         "div",
                         { className: "panel" },
-                        a.a.createElement(Wt, { idCard: e.card.id }),
+                        a.a.createElement(Vt, { idCard: e.card.id }),
                         a.a.createElement(en, { idCard: e.card.id })
                     ),
                     a.a.createElement("div", { className: "name" }, e.card.name)
@@ -1461,7 +1454,7 @@
                 );
             }
             function cn(e) {
-                var t = Nt();
+                var t = yt();
                 return a.a.createElement(an, {
                     handleShowCreateCardForm: function() {
                         t(ft(e.idList));
@@ -1470,7 +1463,7 @@
             }
             var on = n(156);
             n(102);
-            function un(e) {
+            function sn(e) {
                 var t = Object(r.useRef)(null);
                 return (
                     Object(r.useEffect)(function() {
@@ -1516,19 +1509,19 @@
                     )
                 );
             }
-            function sn(e) {
-                var t = Nt(),
+            function un(e) {
+                var t = yt(),
                     n = Object(r.useState)(e.card),
                     c = Object(Xt.a)(n, 2),
                     o = c[0],
                     i = c[1];
-                return a.a.createElement(un, {
+                return a.a.createElement(sn, {
                     name: o.name,
                     handleChangeName: function(t) {
                         return i(e.card.set("name", t));
                     },
                     handleButtonClose: function() {
-                        return t(ct(e.card.id, k.viewing));
+                        return t(ct(e.card.id, C.viewing));
                     },
                     handleButtonSave: function() {
                         return t(ot(o.id, o));
@@ -1536,10 +1529,10 @@
                     typeSave: "update"
                 });
             }
-            function ln() {
-                var e = Nt(),
-                    t = Pt(He);
-                return a.a.createElement(un, {
+            function dn() {
+                var e = yt(),
+                    t = Pt(Ye);
+                return a.a.createElement(sn, {
                     name: t.name,
                     handleChangeName: function(t) {
                         return e(mt(t));
@@ -1554,15 +1547,15 @@
                 });
             }
             n(103);
-            function dn(e) {
-                return a.a.createElement(Gt.c, { droppableId: e.idList }, function(t) {
+            function ln(e) {
+                return a.a.createElement(Jt.c, { droppableId: e.idList }, function(t) {
                     return a.a.createElement(
                         "div",
                         Object.assign({}, t.droppableProps, { ref: t.innerRef, className: "cardList" }),
                         e.cards.valueSeq().map(function(e, t) {
-                            return e.mode === k.editing
-                                ? a.a.createElement(sn, { key: e.id, card: e })
-                                : a.a.createElement(Gt.b, { draggableId: e.id, index: t, key: e.id }, function(t) {
+                            return e.mode === C.editing
+                                ? a.a.createElement(un, { key: e.id, card: e })
+                                : a.a.createElement(Jt.b, { draggableId: e.id, index: t, key: e.id }, function(t) {
                                       return a.a.createElement(
                                           "div",
                                           Object.assign({}, t.draggableProps, t.dragHandleProps, { ref: t.innerRef }),
@@ -1571,15 +1564,15 @@
                                   });
                         }),
                         e.idList === e.createCardIdList
-                            ? a.a.createElement(ln, null)
+                            ? a.a.createElement(dn, null)
                             : a.a.createElement(cn, { idList: e.idList }),
                         t.placeholder
                     );
                 });
             }
             function mn(e) {
-                var t = Pt(Ke);
-                return a.a.createElement(dn, { cards: e.cards, idList: e.idList, createCardIdList: t });
+                var t = Pt(Ge);
+                return a.a.createElement(ln, { cards: e.cards, idList: e.idList, createCardIdList: t });
             }
             n(138);
             function fn(e) {
@@ -1596,23 +1589,23 @@
                 );
             }
             function pn(e) {
-                var t = Pt(ze, e.list.id);
+                var t = Pt(qe, e.list.id);
                 return a.a.createElement(fn, { list: e.list, cards: t });
             }
             n(139);
-            function En(e) {
+            function bn(e) {
                 return a.a.createElement(
-                    Gt.a,
+                    Jt.a,
                     { onDragEnd: e.onDragEnd },
                     a.a.createElement(
-                        Gt.c,
+                        Jt.c,
                         { droppableId: e.idBoard, direction: "horizontal", type: "column" },
                         function(t) {
                             return a.a.createElement(
                                 "div",
                                 Object.assign({}, t.droppableProps, { ref: t.innerRef, className: "listList" }),
                                 e.lists.valueSeq().map(function(e, t) {
-                                    return a.a.createElement(Gt.b, { draggableId: e.id, index: t, key: e.id }, function(
+                                    return a.a.createElement(Jt.b, { draggableId: e.id, index: t, key: e.id }, function(
                                         t
                                     ) {
                                         return a.a.createElement(
@@ -1631,10 +1624,10 @@
                     )
                 );
             }
-            function bn(e) {
-                var t = Pt(Ue, e.idBoard),
-                    n = Nt();
-                return a.a.createElement(En, {
+            function En(e) {
+                var t = Pt(Fe, e.idBoard),
+                    n = yt();
+                return a.a.createElement(bn, {
                     idBoard: e.idBoard,
                     lists: t,
                     onDragEnd: function(t) {
@@ -1645,9 +1638,9 @@
                         )
                             return !1;
                         t.destination.droppableId === e.idBoard
-                            ? n(Ce(t.draggableId, t.destination.droppableId, t.destination.index, t.source.index))
+                            ? n(we(t.draggableId, t.destination.droppableId, t.destination.index, t.source.index))
                             : n(
-                                  dt(
+                                  lt(
                                       t.draggableId,
                                       t.destination.droppableId,
                                       e.idBoard,
@@ -1682,8 +1675,8 @@
                     )
                 );
             }
-            function On(e) {
-                var t = Object(u.d)(),
+            function vn(e) {
+                var t = Object(s.d)(),
                     n = Pt(Te);
                 return a.a.createElement(hn, {
                     boards: n,
@@ -1694,12 +1687,12 @@
                 });
             }
             n(141);
-            function vn(e) {
+            function On(e) {
                 return a.a.createElement(
                     "div",
                     { className: "navBar" },
-                    a.a.createElement(On, { idBoard: e.idBoard }),
-                    a.a.createElement(zt, null)
+                    a.a.createElement(vn, { idBoard: e.idBoard }),
+                    a.a.createElement(qt, null)
                 );
             }
             n(142);
@@ -1707,51 +1700,51 @@
                 return a.a.createElement(
                     "div",
                     { className: "board" },
-                    a.a.createElement(vn, { idBoard: e.idBoard }),
-                    a.a.createElement(bn, { idBoard: e.idBoard })
+                    a.a.createElement(On, { idBoard: e.idBoard }),
+                    a.a.createElement(En, { idBoard: e.idBoard })
                 );
             }
             function xn() {
-                var e = Object(At.g)().idBoard,
-                    t = Pt(ye),
+                var e = Object(Bt.g)().idBoard,
+                    t = Pt(Ae),
                     n = Pt(Pe, e);
-                return t === v.isNotLoaded
+                return t === O.isNotLoaded
                     ? a.a.createElement(Mt, null)
                     : n
-                    ? n.cardsLoadingState === v.isNotLoaded
-                        ? a.a.createElement(Kt, { board: n })
+                    ? n.cardsLoadingState === O.isNotLoaded
+                        ? a.a.createElement(Gt, { board: n })
                         : a.a.createElement(jn, { idBoard: n.id })
                     : a.a.createElement("h1", null, "404");
             }
             n(143), n(144);
             var Sn = function() {
                 return a.a.createElement(
-                    At.c,
+                    Bt.c,
                     null,
-                    a.a.createElement(At.a, { exact: !0, path: "/", component: Tt }),
-                    a.a.createElement(At.a, { exact: !0, path: "/auth" }),
-                    a.a.createElement(At.a, { exact: !0, path: "/auth/save_token", component: Rt }),
-                    a.a.createElement(At.a, { exact: !0, path: "/board", component: Ht }),
-                    a.a.createElement(At.a, { exact: !0, path: "/board/:idBoard", component: xn })
+                    a.a.createElement(Bt.a, { exact: !0, path: "/", component: Tt }),
+                    a.a.createElement(Bt.a, { exact: !0, path: "/auth" }),
+                    a.a.createElement(Bt.a, { exact: !0, path: "/auth/save_token", component: Rt }),
+                    a.a.createElement(Bt.a, { exact: !0, path: "/board", component: Yt }),
+                    a.a.createElement(Bt.a, { exact: !0, path: "/board/:idBoard", component: xn })
                 );
             };
             n(145);
             n.d(t, "history", function() {
-                return _n;
+                return Ln;
             });
             var gn,
-                _n = Object(s.a)({ basename: It.a }),
-                Ln = Object(m.a)(),
-                Cn = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || i.d,
-                wn = Object(i.e)(J(_n), Cn(Object(i.a)(Ln, Object(l.a)(_n))));
-            Ln.run(
+                Ln = Object(u.a)({ basename: It.a }),
+                _n = Object(m.a)(),
+                wn = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || i.d,
+                kn = Object(i.e)(K(Ln), wn(Object(i.a)(_n, Object(d.a)(Ln))));
+            _n.run(
                 ((gn = Dt),
-                W.a.mark(function e() {
-                    return W.a.wrap(function(e) {
+                V.a.mark(function e() {
+                    return V.a.wrap(function(e) {
                         for (;;)
                             switch ((e.prev = e.next)) {
                                 case 0:
-                                    return (e.next = 2), Object(X.a)([me(gn), Ie(gn), tt(gn), Ct(gn)]);
+                                    return (e.next = 2), Object(X.a)([me(gn), Ie(gn), tt(gn), wt(gn)]);
                                 case 2:
                                 case "end":
                                     return e.stop();
@@ -1761,9 +1754,9 @@
             ),
                 o.a.render(
                     a.a.createElement(
-                        u.a,
-                        { store: wn },
-                        a.a.createElement(d.a, { history: _n }, a.a.createElement(Sn, null))
+                        s.a,
+                        { store: kn },
+                        a.a.createElement(l.a, { history: Ln }, a.a.createElement(Sn, null))
                     ),
                     document.getElementById("root")
                 ),
@@ -1773,7 +1766,7 @@
                     });
         },
         70: function(e) {
-            e.exports = JSON.parse('{"a":"/trello/build/"}');
+            e.exports = JSON.parse('{"a":"/"}');
         },
         80: function(e, t, n) {
             e.exports = n(146);
@@ -1788,4 +1781,4 @@
     },
     [[80, 1, 2]]
 ]);
-//# sourceMappingURL=main.d1f81e3f.chunk.js.map
+//# sourceMappingURL=main.2296aec1.chunk.js.map

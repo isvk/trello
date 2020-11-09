@@ -13324,8 +13324,8 @@
                 }
                 var b =
                         ("undefined" !== typeof e &&
-                            (Object({ NODE_ENV: "production", PUBLIC_URL: "/trello/build" }).REACT_APP_SC_ATTR ||
-                                Object({ NODE_ENV: "production", PUBLIC_URL: "/trello/build" }).SC_ATTR)) ||
+                            (Object({ NODE_ENV: "production", PUBLIC_URL: "" }).REACT_APP_SC_ATTR ||
+                                Object({ NODE_ENV: "production", PUBLIC_URL: "" }).SC_ATTR)) ||
                         "data-styled",
                     w = "data-styled-version",
                     _ = "5.0.1",
@@ -13333,9 +13333,8 @@
                     E =
                         ("boolean" === typeof SC_DISABLE_SPEEDY && SC_DISABLE_SPEEDY) ||
                         ("undefined" !== typeof e &&
-                            (Object({ NODE_ENV: "production", PUBLIC_URL: "/trello/build" })
-                                .REACT_APP_SC_DISABLE_SPEEDY ||
-                                Object({ NODE_ENV: "production", PUBLIC_URL: "/trello/build" }).SC_DISABLE_SPEEDY)) ||
+                            (Object({ NODE_ENV: "production", PUBLIC_URL: "" }).REACT_APP_SC_DISABLE_SPEEDY ||
+                                Object({ NODE_ENV: "production", PUBLIC_URL: "" }).SC_DISABLE_SPEEDY)) ||
                         !1,
                     S = function() {
                         return n.nc;
@@ -24064,4 +24063,4 @@
         }
     ]
 ]);
-//# sourceMappingURL=2.52e3610a.chunk.js.map
+//# sourceMappingURL=2.47b6b0ba.chunk.js.map
