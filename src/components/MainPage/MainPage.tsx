@@ -6,7 +6,12 @@ export default function MainPage() {
     return (
         <div className="mainPage">
             <div className="formLogin">
-                <h1 className="title">Trello Test Task</h1>
+                <h1 className="title">Клиент для Trello API</h1>
+                <div>
+                    Внимание!!! В этом клиенте есть функции удаление и изменение карточек,
+                    <br />
+                    что бы не рисковать своими рабочими досками, воспользуйтесь тестовым аккаунтом.
+                </div>
                 <ol>
                     <li>
                         <p>
@@ -19,7 +24,9 @@ export default function MainPage() {
                         <p>
                             Логин: <strong>test-of-war@yandex.ru</strong>
                         </p>
-                        <p>Пароль: Test123456</p>
+                        <p>
+                            Пароль: <strong>Test1234567</strong>
+                        </p>
                     </li>
                     <li>
                         После авторизации перейдите для <Auth />
