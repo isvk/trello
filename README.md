@@ -1,14 +1,16 @@
-#Клиент для Trello API
+# Клиент для Trello API
 
-##[Демо](https://isvk.github.io/trello/build/#/)
+## [Демо](https://isvk.github.io/trello/build/#/)
 
-##Реализованный функционал
+## Реализованный функционал
+
 * Авторизация
 * Выбор досок
 * CRUD для карточек
 * Сортировка и перенос(drag-and-drop) для листов и карточек.
 
-##Стек
+## Стек
+
 * React
 * Hooks
 * Redux
@@ -20,12 +22,13 @@
 * React-beautiful-dnd
 * REST API
 
-##Back-End
+## Back-End
+
 Рабочий сервер Trello API
 
 ---
 
-##Install
+## Install
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
